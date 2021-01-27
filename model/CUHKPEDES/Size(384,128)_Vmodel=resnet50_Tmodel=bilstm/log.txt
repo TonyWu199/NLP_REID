@@ -1,0 +1,1915 @@
+2021-01-21 21:20:56,489 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:20:56,489 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:20:56,490 --- INFO: Creating Dataloader...
+2021-01-21 21:20:57,034 --- INFO: Creating Network...
+2021-01-21 21:21:00,678 --- INFO: Total parameters； 43.17M
+2021-01-21 21:21:00,679 --- INFO: Creating Solver...
+2021-01-21 21:21:24,825 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:21:24,826 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:21:24,826 --- INFO: Creating Dataloader...
+2021-01-21 21:21:25,366 --- INFO: Creating Network...
+2021-01-21 21:21:28,980 --- INFO: Total parameters； 43.17M
+2021-01-21 21:21:28,981 --- INFO: Creating Solver...
+2021-01-21 21:22:49,487 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:22:49,487 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:22:49,487 --- INFO: Creating Dataloader...
+2021-01-21 21:22:50,036 --- INFO: Creating Network...
+2021-01-21 21:22:53,585 --- INFO: Total parameters； 43.17M
+2021-01-21 21:22:53,586 --- INFO: Creating Solver...
+2021-01-21 21:23:56,050 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:23:56,050 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 4
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:23:56,051 --- INFO: Creating Dataloader...
+2021-01-21 21:23:56,618 --- INFO: Creating Network...
+2021-01-21 21:24:00,002 --- INFO: Total parameters； 43.17M
+2021-01-21 21:24:00,002 --- INFO: Creating Solver...
+2021-01-21 21:24:26,004 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:24:26,004 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 4
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:24:26,004 --- INFO: Creating Dataloader...
+2021-01-21 21:24:26,544 --- INFO: Creating Network...
+2021-01-21 21:24:30,105 --- INFO: Total parameters； 43.17M
+2021-01-21 21:24:30,105 --- INFO: Creating Solver...
+2021-01-21 21:24:36,059 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:24:36,059 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:24:36,060 --- INFO: Creating Dataloader...
+2021-01-21 21:24:36,606 --- INFO: Creating Network...
+2021-01-21 21:24:40,204 --- INFO: Total parameters； 43.17M
+2021-01-21 21:24:40,205 --- INFO: Creating Solver...
+2021-01-21 21:25:05,301 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:25:05,301 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: True
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:25:05,301 --- INFO: Creating Dataloader...
+2021-01-21 21:25:05,836 --- INFO: Creating Network...
+2021-01-21 21:25:09,655 --- INFO: Total parameters； 43.17M
+2021-01-21 21:25:09,655 --- INFO: Creating Solver...
+2021-01-21 21:26:32,618 --- INFO: eta: 1:50:23  epoch [1/60]  loss: 17.1512 (18.1741)  instance_loss: 17.1512 (18.1741)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  time: 0.2065 (0.2110)  data: 0.0114 (0.0142)  lr: 0.000110
+2021-01-21 21:26:32,619 --- INFO: Testing
+2021-01-21 21:26:48,384 --- INFO: cmc1_t2i = 0.0078, cmc5_t2i = 0.0272, cmc10_t2i = 0.0496
+2021-01-21 21:26:48,384 --- INFO: cmc1_i2t = 0.0065, cmc5_i2t = 0.0205, cmc10_i2t = 0.0413
+2021-01-21 21:26:48,384 --- INFO: r1 = 0.0133, ap50 = 0.0060
+2021-01-21 21:27:51,061 --- INFO: eta: 2:38:35  epoch [1/60]  loss: 24.4242 (27.3168)  instance_loss: 16.7208 (17.9760)  global_align_loss: 7.6840 (9.3408)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  time: 0.3003 (0.3032)  data: 0.0103 (0.0120)  lr: 0.000110
+2021-01-21 21:27:51,062 --- INFO: Testing
+2021-01-21 21:28:05,879 --- INFO: cmc1_t2i = 0.0452, cmc5_t2i = 0.1462, cmc10_t2i = 0.2147
+2021-01-21 21:28:05,879 --- INFO: cmc1_i2t = 0.0547, cmc5_i2t = 0.1828, cmc10_i2t = 0.2775
+2021-01-21 21:28:05,879 --- INFO: r1 = 0.1018, ap50 = 0.0265
+2021-01-21 21:28:38,809 --- INFO: eta: 1:55:15  epoch [2/60]  loss: 12.8664 (16.1120)  instance_loss: 12.8664 (16.1120)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  time: 0.2065 (0.2241)  data: 0.0108 (0.0284)  lr: 0.000209
+2021-01-21 21:28:46,589 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:28:46,589 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: True
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:28:46,590 --- INFO: Creating Dataloader...
+2021-01-21 21:28:47,141 --- INFO: Creating Network...
+2021-01-21 21:28:50,649 --- INFO: Total parameters； 43.17M
+2021-01-21 21:28:50,649 --- INFO: Creating Solver...
+2021-01-21 21:29:03,576 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:29:03,576 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:29:03,577 --- INFO: Creating Dataloader...
+2021-01-21 21:29:04,127 --- INFO: Creating Network...
+2021-01-21 21:29:07,890 --- INFO: Total parameters； 43.17M
+2021-01-21 21:29:07,891 --- INFO: Creating Solver...
+2021-01-21 21:29:54,446 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:29:54,447 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: False
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:29:54,447 --- INFO: Creating Dataloader...
+2021-01-21 21:29:54,999 --- INFO: Creating Network...
+2021-01-21 21:29:58,560 --- INFO: Total parameters； 43.17M
+2021-01-21 21:29:58,560 --- INFO: Creating Solver...
+2021-01-21 21:30:10,787 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-21 21:30:10,787 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: False
+    CMPM: False
+    GLOBALALIGN: True
+    INSTANCE: True
+    MH: True
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-21 21:30:10,787 --- INFO: Creating Dataloader...
+2021-01-21 21:30:11,323 --- INFO: Creating Network...
+2021-01-21 21:30:14,914 --- INFO: Total parameters； 43.17M
+2021-01-21 21:30:14,915 --- INFO: Creating Solver...
+2021-01-21 21:31:49,315 --- INFO: eta: 1:48:47  epoch [1/60]  loss: 3019.5281 (4549.8779)  instance_loss: 17.6386 (18.3502)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 3001.8696 (4531.5277)  time: 0.2071 (0.2079)  data: 0.0099 (0.0120)  lr: 0.000110
+2021-01-21 21:31:49,315 --- INFO: Testing
+2021-01-21 21:32:06,182 --- INFO: cmc1_t2i = 0.0189, cmc5_t2i = 0.0683, cmc10_t2i = 0.1147
+2021-01-21 21:32:06,182 --- INFO: cmc1_i2t = 0.0303, cmc5_i2t = 0.1034, cmc10_i2t = 0.1581
+2021-01-21 21:32:06,182 --- INFO: r1 = 0.0547, ap50 = 0.0130
+2021-01-21 21:32:57,573 --- INFO: eta: 2:39:47  epoch [1/60]  loss: 2986.8762 (4594.9618)  instance_loss: 17.5820 (18.3496)  global_align_loss: 11.5659 (11.6738)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2957.7070 (4564.9383)  time: 0.3041 (0.3055)  data: 0.0111 (0.0135)  lr: 0.000110
+2021-01-21 21:32:57,573 --- INFO: Testing
+2021-01-21 21:33:13,360 --- INFO: cmc1_t2i = 0.0125, cmc5_t2i = 0.0377, cmc10_t2i = 0.0665
+2021-01-21 21:33:13,361 --- INFO: cmc1_i2t = 0.0241, cmc5_i2t = 0.0852, cmc10_i2t = 0.1318
+2021-01-21 21:33:13,362 --- INFO: r1 = 0.0397, ap50 = 0.0054
+2021-01-21 21:33:57,752 --- INFO: eta: 1:55:33  epoch [2/60]  loss: 1829.9955 (3458.6860)  instance_loss: 15.8663 (17.1525)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 1813.8488 (3441.5334)  time: 0.2064 (0.2247)  data: 0.0104 (0.0282)  lr: 0.000209
+2021-01-21 21:35:48,584 --- INFO: eta: 1:50:47  epoch [3/60]  loss: 1048.0925 (2825.5485)  instance_loss: 14.9508 (16.2832)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 1033.2206 (2809.2653)  time: 0.2060 (0.2192)  data: 0.0103 (0.0229)  lr: 0.000308
+2021-01-21 21:35:58,000 --- INFO: eta: 2:45:44  epoch [2/60]  loss: 1724.6797 (3526.6411)  instance_loss: 15.8340 (17.1591)  global_align_loss: 11.5064 (11.5866)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 1697.4528 (3497.8953)  time: 0.3032 (0.3223)  data: 0.0120 (0.0288)  lr: 0.000209
+2021-01-21 21:37:40,131 --- INFO: eta: 1:47:39  epoch [4/60]  loss: 770.4845 (2390.3207)  instance_loss: 14.4996 (15.7332)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 755.2632 (2374.5875)  time: 0.2065 (0.2168)  data: 0.0103 (0.0204)  lr: 0.000407
+2021-01-21 21:38:43,178 --- INFO: eta: 2:40:53  epoch [3/60]  loss: 1147.8447 (2873.3749)  instance_loss: 15.1783 (16.3266)  global_align_loss: 11.5003 (11.5576)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 1121.4561 (2845.4907)  time: 0.3115 (0.3183)  data: 0.0113 (0.0239)  lr: 0.000308
+2021-01-21 21:39:32,276 --- INFO: eta: 1:45:09  epoch [5/60]  loss: 625.6733 (2068.7944)  instance_loss: 15.4454 (15.4961)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 610.6860 (2053.2983)  time: 0.2053 (0.2156)  data: 0.0101 (0.0190)  lr: 0.000506
+2021-01-21 21:41:25,454 --- INFO: eta: 1:43:00  epoch [6/60]  loss: 504.2739 (1812.6095)  instance_loss: 16.1722 (15.4858)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 487.9833 (1797.1236)  time: 0.2056 (0.2151)  data: 0.0100 (0.0182)  lr: 0.000605
+2021-01-21 21:41:27,857 --- INFO: eta: 2:36:58  epoch [4/60]  loss: 870.1943 (2431.6826)  instance_loss: 14.8154 (15.7928)  global_align_loss: 11.5141 (11.5457)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 843.1555 (2404.3442)  time: 0.3051 (0.3162)  data: 0.0125 (0.0216)  lr: 0.000407
+2021-01-21 21:43:17,632 --- INFO: eta: 1:40:49  epoch [7/60]  loss: 220.2753 (1600.4450)  instance_loss: 17.6156 (15.6500)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 202.4359 (1584.7949)  time: 0.2048 (0.2145)  data: 0.0099 (0.0175)  lr: 0.000704
+2021-01-21 21:44:13,296 --- INFO: eta: 2:33:39  epoch [5/60]  loss: 517.2271 (2097.8789)  instance_loss: 15.0594 (15.5330)  global_align_loss: 11.5982 (11.5479)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 490.4199 (2070.7980)  time: 0.3105 (0.3151)  data: 0.0119 (0.0202)  lr: 0.000506
+2021-01-21 21:45:09,647 --- INFO: eta: 1:38:41  epoch [8/60]  loss: 144.6536 (1425.1508)  instance_loss: 18.2387 (15.9144)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 126.3736 (1409.2364)  time: 0.2058 (0.2140)  data: 0.0102 (0.0170)  lr: 0.000803
+2021-01-21 21:46:59,079 --- INFO: eta: 2:30:35  epoch [6/60]  loss: 417.6115 (1844.5885)  instance_loss: 15.9136 (15.4853)  global_align_loss: 11.6660 (11.5656)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 389.0040 (1817.5377)  time: 0.3075 (0.3145)  data: 0.0129 (0.0193)  lr: 0.000605
+2021-01-21 21:47:03,081 --- INFO: eta: 1:36:44  epoch [9/60]  loss: 136.2218 (1284.4049)  instance_loss: 18.5270 (16.1811)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 117.9695 (1268.2238)  time: 0.2071 (0.2139)  data: 0.0104 (0.0167)  lr: 0.000902
+2021-01-21 21:48:56,112 --- INFO: eta: 1:34:46  epoch [10/60]  loss: 121.4493 (1169.9850)  instance_loss: 18.8927 (16.4260)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 102.7720 (1153.5590)  time: 0.2076 (0.2138)  data: 0.0103 (0.0165)  lr: 0.001001
+2021-01-21 21:48:56,112 --- INFO: Testing
+2021-01-21 21:49:11,561 --- INFO: cmc1_t2i = 0.0073, cmc5_t2i = 0.0342, cmc10_t2i = 0.0623
+2021-01-21 21:49:11,561 --- INFO: cmc1_i2t = 0.0094, cmc5_i2t = 0.0429, cmc10_i2t = 0.0709
+2021-01-21 21:49:11,561 --- INFO: r1 = 0.0124, ap50 = 0.0168
+2021-01-21 21:49:46,741 --- INFO: eta: 2:27:51  epoch [7/60]  loss: 347.6594 (1645.5319)  instance_loss: 16.6709 (15.5397)  global_align_loss: 11.7659 (11.5890)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 318.7249 (1618.4032)  time: 0.3091 (0.3146)  data: 0.0120 (0.0187)  lr: 0.000704
+2021-01-21 21:51:02,223 --- INFO: eta: 1:33:48  epoch [11/60]  loss: 137.0134 (1075.6239)  instance_loss: 18.8851 (16.6485)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 118.2741 (1058.9753)  time: 0.2056 (0.2159)  data: 0.0100 (0.0187)  lr: 0.001100
+2021-01-21 21:52:35,097 --- INFO: eta: 2:25:09  epoch [8/60]  loss: 301.8527 (1493.1962)  instance_loss: 16.6029 (15.6120)  global_align_loss: 11.7750 (11.6116)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 272.8648 (1465.9726)  time: 0.3116 (0.3148)  data: 0.0138 (0.0184)  lr: 0.000803
+2021-01-21 21:52:54,401 --- INFO: eta: 1:31:42  epoch [12/60]  loss: 93.7499 (995.1649)  instance_loss: 18.8780 (16.8361)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 74.7379 (978.3288)  time: 0.2066 (0.2155)  data: 0.0103 (0.0183)  lr: 0.001100
+2021-01-21 21:54:45,905 --- INFO: eta: 1:29:36  epoch [13/60]  loss: 109.4724 (926.5087)  instance_loss: 19.0518 (16.9964)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 90.3598 (909.5123)  time: 0.2065 (0.2150)  data: 0.0103 (0.0179)  lr: 0.001100
+2021-01-21 21:55:22,396 --- INFO: eta: 2:22:21  epoch [9/60]  loss: 418.9668 (1371.6518)  instance_loss: 16.2717 (15.6845)  global_align_loss: 11.7173 (11.6270)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 389.7878 (1344.3402)  time: 0.3078 (0.3148)  data: 0.0123 (0.0181)  lr: 0.000902
+2021-01-21 21:56:36,651 --- INFO: eta: 1:27:30  epoch [14/60]  loss: 107.5385 (868.4185)  instance_loss: 19.1964 (17.1351)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 88.9405 (851.2834)  time: 0.2062 (0.2145)  data: 0.0098 (0.0175)  lr: 0.001100
+2021-01-21 21:58:09,117 --- INFO: eta: 2:19:30  epoch [10/60]  loss: 286.5113 (1266.8831)  instance_loss: 16.8064 (15.7550)  global_align_loss: 11.7509 (11.6411)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 258.0927 (1239.4871)  time: 0.3086 (0.3147)  data: 0.0137 (0.0179)  lr: 0.001001
+2021-01-21 21:58:09,118 --- INFO: Testing
+2021-01-21 21:58:24,830 --- INFO: cmc1_t2i = 0.0203, cmc5_t2i = 0.0932, cmc10_t2i = 0.1789
+2021-01-21 21:58:24,830 --- INFO: cmc1_i2t = 0.0257, cmc5_i2t = 0.0764, cmc10_i2t = 0.1083
+2021-01-21 21:58:24,830 --- INFO: r1 = 0.0189, ap50 = 0.0295
+2021-01-21 21:58:28,532 --- INFO: eta: 1:25:29  epoch [15/60]  loss: 87.9023 (816.7679)  instance_loss: 19.3458 (17.2617)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 68.5187 (799.5062)  time: 0.2082 (0.2143)  data: 0.0105 (0.0172)  lr: 0.001100
+2021-01-21 22:00:19,133 --- INFO: eta: 1:23:26  epoch [16/60]  loss: 93.7869 (771.3644)  instance_loss: 19.1583 (17.3757)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 74.4577 (753.9887)  time: 0.2056 (0.2139)  data: 0.0101 (0.0168)  lr: 0.001100
+2021-01-21 22:01:07,403 --- INFO: eta: 2:17:31  epoch [11/60]  loss: 228.0902 (1176.6545)  instance_loss: 16.8474 (15.8278)  global_align_loss: 11.7421 (11.6535)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 199.5229 (1149.1732)  time: 0.3032 (0.3165)  data: 0.0114 (0.0201)  lr: 0.001100
+2021-01-21 22:02:09,886 --- INFO: eta: 1:21:24  epoch [17/60]  loss: 77.5103 (731.6027)  instance_loss: 19.3216 (17.4802)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 57.8768 (714.1226)  time: 0.2062 (0.2135)  data: 0.0103 (0.0166)  lr: 0.001100
+2021-01-21 22:03:52,666 --- INFO: eta: 2:14:30  epoch [12/60]  loss: 169.0655 (1096.5464)  instance_loss: 16.9086 (15.8995)  global_align_loss: 11.8047 (11.6669)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 140.3816 (1068.9800)  time: 0.3045 (0.3160)  data: 0.0117 (0.0197)  lr: 0.001100
+2021-01-21 22:04:01,186 --- INFO: eta: 1:19:25  epoch [18/60]  loss: 74.4990 (696.5766)  instance_loss: 19.4246 (17.5748)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 55.3473 (679.0018)  time: 0.2056 (0.2133)  data: 0.0100 (0.0163)  lr: 0.001100
+2021-01-21 22:05:53,828 --- INFO: eta: 1:17:30  epoch [19/60]  loss: 67.9360 (664.5519)  instance_loss: 19.3933 (17.6633)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 48.6658 (646.8886)  time: 0.2075 (0.2132)  data: 0.0105 (0.0162)  lr: 0.001100
+2021-01-21 22:06:41,027 --- INFO: eta: 2:11:42  epoch [13/60]  loss: 173.6346 (1024.6951)  instance_loss: 17.3466 (15.9805)  global_align_loss: 11.8524 (11.6826)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 144.2945 (997.0319)  time: 0.3133 (0.3161)  data: 0.0133 (0.0193)  lr: 0.001100
+2021-01-21 22:07:47,064 --- INFO: eta: 1:15:36  epoch [20/60]  loss: 105.7760 (635.4476)  instance_loss: 19.3512 (17.7451)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 86.7935 (617.7025)  time: 0.2077 (0.2132)  data: 0.0104 (0.0161)  lr: 0.001100
+2021-01-21 22:07:47,065 --- INFO: Testing
+2021-01-21 22:08:03,816 --- INFO: cmc1_t2i = 0.0011, cmc5_t2i = 0.0086, cmc10_t2i = 0.0146
+2021-01-21 22:08:03,816 --- INFO: cmc1_i2t = 0.0033, cmc5_i2t = 0.0130, cmc10_i2t = 0.0234
+2021-01-21 22:08:03,816 --- INFO: r1 = 0.0013, ap50 = 0.0016
+2021-01-21 22:09:28,413 --- INFO: eta: 2:08:52  epoch [14/60]  loss: 122.5972 (961.5557)  instance_loss: 17.5368 (16.0512)  global_align_loss: 11.8834 (11.6965)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 94.3135 (933.8080)  time: 0.3099 (0.3160)  data: 0.0120 (0.0191)  lr: 0.001100
+2021-01-21 22:09:55,846 --- INFO: eta: 1:14:11  epoch [21/60]  loss: 76.1713 (609.1829)  instance_loss: 19.4964 (17.8203)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 56.9156 (591.3627)  time: 0.2082 (0.2146)  data: 0.0107 (0.0175)  lr: 0.001100
+2021-01-21 22:11:49,602 --- INFO: eta: 1:12:16  epoch [22/60]  loss: 71.4758 (585.3209)  instance_loss: 19.6563 (17.8949)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 51.8015 (567.4260)  time: 0.2118 (0.2145)  data: 0.0119 (0.0173)  lr: 0.001100
+2021-01-21 22:12:14,063 --- INFO: eta: 2:05:56  epoch [15/60]  loss: 137.7803 (906.4768)  instance_loss: 17.3062 (16.1186)  global_align_loss: 11.8602 (11.7103)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 108.5674 (878.6479)  time: 0.3084 (0.3157)  data: 0.0111 (0.0188)  lr: 0.001100
+2021-01-21 22:13:41,347 --- INFO: eta: 1:10:18  epoch [23/60]  loss: 63.6322 (563.6512)  instance_loss: 19.5805 (17.9680)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 44.2044 (545.6832)  time: 0.2070 (0.2143)  data: 0.0104 (0.0172)  lr: 0.001100
+2021-01-21 22:15:03,378 --- INFO: eta: 2:03:12  epoch [16/60]  loss: 115.5701 (857.9173)  instance_loss: 17.1749 (16.1767)  global_align_loss: 11.8659 (11.7228)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 86.5976 (830.0178)  time: 0.3141 (0.3158)  data: 0.0137 (0.0186)  lr: 0.001100
+2021-01-21 22:15:32,392 --- INFO: eta: 1:08:20  epoch [24/60]  loss: 75.4507 (543.2895)  instance_loss: 19.5249 (18.0353)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 55.6778 (525.2542)  time: 0.2049 (0.2141)  data: 0.0099 (0.0170)  lr: 0.001100
+2021-01-21 22:17:23,254 --- INFO: eta: 1:06:22  epoch [25/60]  loss: 110.4543 (526.0908)  instance_loss: 19.8144 (18.1021)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 90.4946 (507.9888)  time: 0.2057 (0.2139)  data: 0.0102 (0.0168)  lr: 0.001100
+2021-01-21 22:17:52,163 --- INFO: eta: 2:00:26  epoch [17/60]  loss: 111.6173 (815.2761)  instance_loss: 17.2472 (16.2251)  global_align_loss: 11.8732 (11.7327)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 82.6930 (787.3183)  time: 0.3110 (0.3159)  data: 0.0127 (0.0185)  lr: 0.001100
+2021-01-21 22:19:15,361 --- INFO: eta: 1:04:26  epoch [26/60]  loss: 50.5375 (507.9741)  instance_loss: 18.8139 (18.1380)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 31.7013 (489.8361)  time: 0.2073 (0.2138)  data: 0.0105 (0.0167)  lr: 0.000110
+2021-01-21 22:20:40,368 --- INFO: eta: 1:57:38  epoch [18/60]  loss: 103.7310 (776.7522)  instance_loss: 17.2087 (16.2677)  global_align_loss: 11.8886 (11.7419)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 74.2787 (748.7426)  time: 0.3103 (0.3159)  data: 0.0127 (0.0183)  lr: 0.001100
+2021-01-21 22:21:06,343 --- INFO: eta: 1:02:29  epoch [27/60]  loss: 50.4604 (491.0373)  instance_loss: 18.6222 (18.1553)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 31.7947 (472.8820)  time: 0.2043 (0.2136)  data: 0.0097 (0.0165)  lr: 0.000110
+2021-01-21 22:22:58,028 --- INFO: eta: 1:00:33  epoch [28/60]  loss: 49.3312 (475.3213)  instance_loss: 18.5741 (18.1681)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 30.7092 (457.1532)  time: 0.2073 (0.2134)  data: 0.0104 (0.0164)  lr: 0.000110
+2021-01-21 22:23:29,066 --- INFO: eta: 1:54:52  epoch [19/60]  loss: 118.8817 (741.8706)  instance_loss: 17.1249 (16.3060)  global_align_loss: 11.8470 (11.7500)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 90.4682 (713.8146)  time: 0.3114 (0.3160)  data: 0.0115 (0.0182)  lr: 0.001100
+2021-01-21 22:24:50,717 --- INFO: eta: 0:58:39  epoch [29/60]  loss: 49.5541 (460.6541)  instance_loss: 18.5660 (18.1790)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 31.0594 (442.4751)  time: 0.2073 (0.2134)  data: 0.0103 (0.0163)  lr: 0.000110
+2021-01-21 22:26:17,402 --- INFO: eta: 1:52:04  epoch [20/60]  loss: 83.1304 (710.4638)  instance_loss: 17.2229 (16.3375)  global_align_loss: 11.8868 (11.7575)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 54.1719 (682.3688)  time: 0.3102 (0.3160)  data: 0.0121 (0.0181)  lr: 0.001100
+2021-01-21 22:26:17,402 --- INFO: Testing
+2021-01-21 22:26:33,654 --- INFO: cmc1_t2i = 0.0169, cmc5_t2i = 0.0452, cmc10_t2i = 0.0792
+2021-01-21 22:26:33,654 --- INFO: cmc1_i2t = 0.0403, cmc5_i2t = 0.1070, cmc10_i2t = 0.1581
+2021-01-21 22:26:33,654 --- INFO: r1 = 0.0452, ap50 = 0.0220
+2021-01-21 22:26:42,860 --- INFO: eta: 0:56:44  epoch [30/60]  loss: 48.0808 (446.9575)  instance_loss: 18.5881 (18.1892)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 29.4918 (428.7683)  time: 0.2055 (0.2133)  data: 0.0101 (0.0162)  lr: 0.000110
+2021-01-21 22:26:42,861 --- INFO: Testing
+2021-01-21 22:26:58,018 --- INFO: cmc1_t2i = 0.0008, cmc5_t2i = 0.0047, cmc10_t2i = 0.0096
+2021-01-21 22:26:58,019 --- INFO: cmc1_i2t = 0.0013, cmc5_i2t = 0.0062, cmc10_i2t = 0.0107
+2021-01-21 22:26:58,019 --- INFO: r1 = 0.0007, ap50 = 0.0010
+2021-01-21 22:28:49,853 --- INFO: eta: 0:55:03  epoch [31/60]  loss: 49.8577 (434.1594)  instance_loss: 18.5793 (18.1990)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 31.3643 (415.9603)  time: 0.2065 (0.2141)  data: 0.0106 (0.0170)  lr: 0.000110
+2021-01-21 22:29:18,240 --- INFO: eta: 1:49:40  epoch [21/60]  loss: 115.7442 (682.5487)  instance_loss: 17.0817 (16.3657)  global_align_loss: 11.8754 (11.7646)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 86.7968 (654.4185)  time: 0.3065 (0.3171)  data: 0.0100 (0.0193)  lr: 0.001100
+2021-01-21 22:30:41,553 --- INFO: eta: 0:53:07  epoch [32/60]  loss: 49.7823 (422.1613)  instance_loss: 18.6125 (18.2084)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 31.1847 (403.9529)  time: 0.2060 (0.2140)  data: 0.0101 (0.0169)  lr: 0.000110
+2021-01-21 22:32:02,316 --- INFO: eta: 1:46:43  epoch [22/60]  loss: 101.1199 (656.0578)  instance_loss: 17.0414 (16.3902)  global_align_loss: 11.8599 (11.7710)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 71.7837 (627.8966)  time: 0.3044 (0.3167)  data: 0.0103 (0.0190)  lr: 0.001100
+2021-01-21 22:32:33,473 --- INFO: eta: 0:51:12  epoch [33/60]  loss: 49.2400 (410.8758)  instance_loss: 18.5891 (18.2170)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 30.7609 (392.6587)  time: 0.2071 (0.2139)  data: 0.0105 (0.0168)  lr: 0.000110
+2021-01-21 22:34:25,733 --- INFO: eta: 0:49:17  epoch [34/60]  loss: 48.7858 (400.2419)  instance_loss: 18.5450 (18.2253)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 30.0819 (382.0166)  time: 0.2088 (0.2138)  data: 0.0117 (0.0167)  lr: 0.000110
+2021-01-21 22:34:47,844 --- INFO: eta: 1:43:50  epoch [23/60]  loss: 88.3824 (631.7108)  instance_loss: 17.1159 (16.4096)  global_align_loss: 11.8719 (11.7768)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 59.9135 (603.5244)  time: 0.3072 (0.3165)  data: 0.0102 (0.0188)  lr: 0.001100
+2021-01-21 22:36:18,239 --- INFO: eta: 0:47:22  epoch [35/60]  loss: 48.8952 (390.2246)  instance_loss: 18.6432 (18.2333)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 30.1992 (371.9913)  time: 0.2076 (0.2137)  data: 0.0106 (0.0166)  lr: 0.000110
+2021-01-21 22:37:35,941 --- INFO: eta: 1:41:01  epoch [24/60]  loss: 103.4178 (609.7640)  instance_loss: 17.0305 (16.4215)  global_align_loss: 11.8771 (11.7815)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 75.1700 (581.5610)  time: 0.3109 (0.3165)  data: 0.0118 (0.0186)  lr: 0.001100
+2021-01-21 22:38:11,499 --- INFO: eta: 0:45:28  epoch [36/60]  loss: 46.8954 (380.6867)  instance_loss: 18.3844 (18.2371)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.4864 (362.4496)  time: 0.2083 (0.2137)  data: 0.0109 (0.0166)  lr: 0.000011
+2021-01-21 22:40:03,059 --- INFO: eta: 0:43:33  epoch [37/60]  loss: 46.9301 (371.6614)  instance_loss: 18.4177 (18.2407)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.4868 (353.4207)  time: 0.2072 (0.2136)  data: 0.0101 (0.0165)  lr: 0.000011
+2021-01-21 22:40:23,243 --- INFO: eta: 1:38:11  epoch [25/60]  loss: 102.4100 (589.5409)  instance_loss: 16.7224 (16.4285)  global_align_loss: 11.8354 (11.7855)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 73.8826 (561.3269)  time: 0.3098 (0.3164)  data: 0.0123 (0.0185)  lr: 0.001100
+2021-01-21 22:41:53,483 --- INFO: eta: 0:41:38  epoch [38/60]  loss: 46.6864 (363.1101)  instance_loss: 18.3618 (18.2439)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.2475 (344.8662)  time: 0.2058 (0.2134)  data: 0.0098 (0.0164)  lr: 0.000011
+2021-01-21 22:43:09,008 --- INFO: eta: 1:35:19  epoch [26/60]  loss: 50.6509 (569.0395)  instance_loss: 16.3604 (16.4198)  global_align_loss: 11.9437 (11.7921)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 21.9078 (540.8276)  time: 0.3064 (0.3162)  data: 0.0110 (0.0183)  lr: 0.000110
+2021-01-21 22:43:45,791 --- INFO: eta: 0:39:43  epoch [39/60]  loss: 46.6724 (354.9977)  instance_loss: 18.3780 (18.2469)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.1856 (336.7507)  time: 0.2057 (0.2134)  data: 0.0100 (0.0163)  lr: 0.000011
+2021-01-21 22:45:38,665 --- INFO: eta: 0:37:49  epoch [40/60]  loss: 46.4869 (347.2920)  instance_loss: 18.3525 (18.2496)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.1931 (329.0424)  time: 0.2077 (0.2133)  data: 0.0105 (0.0162)  lr: 0.000011
+2021-01-21 22:45:38,665 --- INFO: Testing
+2021-01-21 22:45:53,974 --- INFO: cmc1_t2i = 0.0013, cmc5_t2i = 0.0050, cmc10_t2i = 0.0112
+2021-01-21 22:45:53,974 --- INFO: cmc1_i2t = 0.0013, cmc5_i2t = 0.0049, cmc10_i2t = 0.0088
+2021-01-21 22:45:53,974 --- INFO: r1 = 0.0013, ap50 = 0.0009
+2021-01-21 22:45:56,371 --- INFO: eta: 1:32:30  epoch [27/60]  loss: 47.8179 (549.8258)  instance_loss: 16.3703 (16.4065)  global_align_loss: 11.9421 (11.7995)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 19.7514 (521.6198)  time: 0.3113 (0.3162)  data: 0.0120 (0.0182)  lr: 0.000110
+2021-01-21 22:47:47,034 --- INFO: eta: 0:36:03  epoch [41/60]  loss: 46.5825 (339.9606)  instance_loss: 18.3986 (18.2521)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.3009 (321.7085)  time: 0.2084 (0.2140)  data: 0.0104 (0.0169)  lr: 0.000011
+2021-01-21 22:48:41,636 --- INFO: eta: 1:29:38  epoch [28/60]  loss: 49.6716 (531.9175)  instance_loss: 16.1513 (16.3921)  global_align_loss: 11.9247 (11.8065)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 21.6640 (503.7188)  time: 0.3066 (0.3160)  data: 0.0107 (0.0180)  lr: 0.000110
+2021-01-21 22:49:39,387 --- INFO: eta: 0:34:08  epoch [42/60]  loss: 46.1770 (332.9760)  instance_loss: 18.3081 (18.2542)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.8854 (314.7218)  time: 0.2086 (0.2140)  data: 0.0109 (0.0168)  lr: 0.000011
+2021-01-21 22:51:27,799 --- INFO: eta: 1:26:48  epoch [29/60]  loss: 47.5146 (515.2426)  instance_loss: 15.9007 (16.3763)  global_align_loss: 11.9114 (11.8123)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 20.0867 (487.0540)  time: 0.3093 (0.3158)  data: 0.0119 (0.0179)  lr: 0.000110
+2021-01-21 22:51:31,620 --- INFO: eta: 0:32:14  epoch [43/60]  loss: 46.3423 (326.3192)  instance_loss: 18.3492 (18.2563)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.0363 (308.0630)  time: 0.2091 (0.2139)  data: 0.0122 (0.0167)  lr: 0.000011
+2021-01-21 22:53:24,022 --- INFO: eta: 0:30:20  epoch [44/60]  loss: 46.2793 (319.9635)  instance_loss: 18.3196 (18.2580)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.9138 (301.7055)  time: 0.2084 (0.2138)  data: 0.0116 (0.0167)  lr: 0.000011
+2021-01-21 22:54:14,698 --- INFO: eta: 1:23:59  epoch [30/60]  loss: 46.4158 (499.6494)  instance_loss: 15.8244 (16.3605)  global_align_loss: 11.9316 (11.8178)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 18.4702 (471.4711)  time: 0.3089 (0.3158)  data: 0.0114 (0.0178)  lr: 0.000110
+2021-01-21 22:54:14,698 --- INFO: Testing
+2021-01-21 22:54:32,670 --- INFO: cmc1_t2i = 0.0159, cmc5_t2i = 0.0397, cmc10_t2i = 0.0830
+2021-01-21 22:54:32,671 --- INFO: cmc1_i2t = 0.0820, cmc5_i2t = 0.1845, cmc10_i2t = 0.2411
+2021-01-21 22:54:32,671 --- INFO: r1 = 0.0800, ap50 = 0.0299
+2021-01-21 22:55:17,293 --- INFO: eta: 0:28:26  epoch [45/60]  loss: 46.3024 (313.8908)  instance_loss: 18.3353 (18.2595)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.9731 (295.6313)  time: 0.2101 (0.2138)  data: 0.0116 (0.0166)  lr: 0.000011
+2021-01-21 22:57:10,616 --- INFO: eta: 0:26:32  epoch [46/60]  loss: 46.2519 (308.0750)  instance_loss: 18.2745 (18.2607)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.9676 (289.8144)  time: 0.2114 (0.2138)  data: 0.0122 (0.0166)  lr: 0.000001
+2021-01-21 22:57:19,421 --- INFO: eta: 1:21:27  epoch [31/60]  loss: 45.8168 (485.0515)  instance_loss: 15.8626 (16.3427)  global_align_loss: 11.9344 (11.8228)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 17.9074 (456.8860)  time: 0.3097 (0.3168)  data: 0.0102 (0.0188)  lr: 0.000110
+2021-01-21 22:59:03,277 --- INFO: eta: 0:24:38  epoch [47/60]  loss: 46.0991 (302.5060)  instance_loss: 18.3235 (18.2618)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.8939 (284.2442)  time: 0.2064 (0.2137)  data: 0.0103 (0.0165)  lr: 0.000001
+2021-01-21 23:00:03,909 --- INFO: eta: 1:18:35  epoch [32/60]  loss: 47.1099 (471.3568)  instance_loss: 15.7010 (16.3262)  global_align_loss: 11.8939 (11.8270)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 20.4212 (443.2036)  time: 0.3031 (0.3165)  data: 0.0101 (0.0186)  lr: 0.000110
+2021-01-21 23:00:55,065 --- INFO: eta: 0:22:44  epoch [48/60]  loss: 46.3574 (297.1693)  instance_loss: 18.3365 (18.2627)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.1219 (278.9065)  time: 0.2059 (0.2137)  data: 0.0103 (0.0165)  lr: 0.000001
+2021-01-21 23:02:48,112 --- INFO: eta: 0:20:50  epoch [49/60]  loss: 46.2952 (292.0504)  instance_loss: 18.2893 (18.2636)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.0071 (273.7868)  time: 0.2052 (0.2136)  data: 0.0101 (0.0164)  lr: 0.000001
+2021-01-21 23:02:50,281 --- INFO: eta: 1:15:45  epoch [33/60]  loss: 45.9155 (458.4745)  instance_loss: 15.8182 (16.3082)  global_align_loss: 11.9118 (11.8308)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 17.9698 (430.3355)  time: 0.3134 (0.3164)  data: 0.0120 (0.0185)  lr: 0.000110
+2021-01-21 23:04:40,769 --- INFO: eta: 0:18:56  epoch [50/60]  loss: 46.1721 (287.1368)  instance_loss: 18.2500 (18.2644)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.9830 (268.8724)  time: 0.2068 (0.2136)  data: 0.0105 (0.0164)  lr: 0.000001
+2021-01-21 23:04:40,770 --- INFO: Testing
+2021-01-21 23:04:55,832 --- INFO: cmc1_t2i = 0.0003, cmc5_t2i = 0.0037, cmc10_t2i = 0.0075
+2021-01-21 23:04:55,832 --- INFO: cmc1_i2t = 0.0010, cmc5_i2t = 0.0062, cmc10_i2t = 0.0120
+2021-01-21 23:04:55,832 --- INFO: r1 = 0.0000, ap50 = 0.0010
+2021-01-21 23:05:38,115 --- INFO: eta: 1:12:56  epoch [34/60]  loss: 47.3018 (446.3489)  instance_loss: 15.8728 (16.2896)  global_align_loss: 11.9039 (11.8344)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 18.9601 (418.2249)  time: 0.3070 (0.3164)  data: 0.0109 (0.0183)  lr: 0.000110
+2021-01-21 23:06:46,689 --- INFO: eta: 0:17:04  epoch [51/60]  loss: 46.4435 (282.4150)  instance_loss: 18.2823 (18.2652)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.0968 (264.1498)  time: 0.2051 (0.2141)  data: 0.0099 (0.0168)  lr: 0.000001
+2021-01-21 23:08:26,287 --- INFO: eta: 1:10:08  epoch [35/60]  loss: 46.1533 (434.8955)  instance_loss: 15.7245 (16.2710)  global_align_loss: 11.8792 (11.8373)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 18.6852 (406.7873)  time: 0.3095 (0.3164)  data: 0.0109 (0.0183)  lr: 0.000110
+2021-01-21 23:08:38,272 --- INFO: eta: 0:15:10  epoch [52/60]  loss: 46.1052 (277.8754)  instance_loss: 18.3133 (18.2660)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.7957 (259.6094)  time: 0.2063 (0.2140)  data: 0.0103 (0.0168)  lr: 0.000001
+2021-01-21 23:10:30,766 --- INFO: eta: 0:13:16  epoch [53/60]  loss: 46.0468 (273.5066)  instance_loss: 18.3443 (18.2668)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.8006 (255.2398)  time: 0.2086 (0.2139)  data: 0.0120 (0.0167)  lr: 0.000001
+2021-01-21 23:11:11,827 --- INFO: eta: 1:07:17  epoch [36/60]  loss: 41.9327 (423.9933)  instance_loss: 15.4736 (16.2498)  global_align_loss: 11.8899 (11.8402)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 14.4422 (395.9033)  time: 0.3075 (0.3162)  data: 0.0107 (0.0181)  lr: 0.000011
+2021-01-21 23:12:22,892 --- INFO: eta: 0:11:22  epoch [54/60]  loss: 45.8811 (269.2995)  instance_loss: 18.3025 (18.2675)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.6233 (251.0320)  time: 0.2077 (0.2139)  data: 0.0107 (0.0167)  lr: 0.000001
+2021-01-21 23:13:56,838 --- INFO: eta: 1:04:27  epoch [37/60]  loss: 41.4996 (413.6646)  instance_loss: 15.6146 (16.2305)  global_align_loss: 11.9131 (11.8433)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.7875 (385.5908)  time: 0.3054 (0.3161)  data: 0.0108 (0.0180)  lr: 0.000011
+2021-01-21 23:14:15,494 --- INFO: eta: 0:09:28  epoch [55/60]  loss: 46.2697 (265.2451)  instance_loss: 18.2908 (18.2681)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 28.0106 (246.9770)  time: 0.2083 (0.2138)  data: 0.0105 (0.0166)  lr: 0.000001
+2021-01-21 23:16:09,087 --- INFO: eta: 0:07:35  epoch [56/60]  loss: 46.2513 (261.3349)  instance_loss: 18.3023 (18.2688)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.9110 (243.0661)  time: 0.2090 (0.2138)  data: 0.0118 (0.0166)  lr: 0.000001
+2021-01-21 23:16:43,245 --- INFO: eta: 1:01:38  epoch [38/60]  loss: 42.0869 (403.8773)  instance_loss: 15.3926 (16.2124)  global_align_loss: 11.8861 (11.8458)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 14.7831 (375.8191)  time: 0.3083 (0.3160)  data: 0.0109 (0.0179)  lr: 0.000011
+2021-01-21 23:18:02,460 --- INFO: eta: 0:05:41  epoch [57/60]  loss: 46.0290 (257.5629)  instance_loss: 18.2745 (18.2693)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.6676 (239.2936)  time: 0.2085 (0.2138)  data: 0.0120 (0.0165)  lr: 0.000001
+2021-01-21 23:19:30,432 --- INFO: eta: 0:58:49  epoch [39/60]  loss: 40.9796 (394.5882)  instance_loss: 15.4268 (16.1967)  global_align_loss: 11.8907 (11.8487)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.1445 (366.5428)  time: 0.3107 (0.3159)  data: 0.0113 (0.0178)  lr: 0.000011
+2021-01-21 23:19:56,338 --- INFO: eta: 0:03:47  epoch [58/60]  loss: 46.1248 (253.9207)  instance_loss: 18.3213 (18.2699)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.8330 (235.6508)  time: 0.2101 (0.2138)  data: 0.0116 (0.0165)  lr: 0.000001
+2021-01-21 23:21:48,725 --- INFO: eta: 0:01:53  epoch [59/60]  loss: 46.0462 (250.4025)  instance_loss: 18.2933 (18.2704)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.7608 (232.1321)  time: 0.2039 (0.2138)  data: 0.0100 (0.0165)  lr: 0.000001
+2021-01-21 23:22:19,033 --- INFO: eta: 0:56:01  epoch [40/60]  loss: 41.6685 (385.7595)  instance_loss: 15.4848 (16.1809)  global_align_loss: 11.9247 (11.8511)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 14.0496 (357.7275)  time: 0.3120 (0.3160)  data: 0.0116 (0.0178)  lr: 0.000011
+2021-01-21 23:22:19,034 --- INFO: Testing
+2021-01-21 23:22:34,757 --- INFO: cmc1_t2i = 0.0211, cmc5_t2i = 0.0403, cmc10_t2i = 0.0626
+2021-01-21 23:22:34,757 --- INFO: cmc1_i2t = 0.0273, cmc5_i2t = 0.1337, cmc10_i2t = 0.2746
+2021-01-21 23:22:34,758 --- INFO: r1 = 0.0413, ap50 = 0.0220
+2021-01-21 23:23:41,885 --- INFO: eta: 0:00:00  epoch [60/60]  loss: 45.9957 (247.0010)  instance_loss: 18.2601 (18.2708)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 27.7431 (228.7302)  time: 0.2089 (0.2138)  data: 0.0105 (0.0164)  lr: 0.000001
+2021-01-21 23:23:41,886 --- INFO: Testing
+2021-01-21 23:23:57,524 --- INFO: cmc1_t2i = 0.0007, cmc5_t2i = 0.0052, cmc10_t2i = 0.0117
+2021-01-21 23:23:57,524 --- INFO: cmc1_i2t = 0.0013, cmc5_i2t = 0.0072, cmc10_i2t = 0.0111
+2021-01-21 23:23:57,525 --- INFO: r1 = 0.0010, ap50 = 0.0009
+2021-01-21 23:23:57,525 --- INFO: Total training time: 1:53:58.933765 (12.8551 s / it)
+2021-01-21 23:23:57,525 --- INFO: Outputdir_path: model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm
+2021-01-21 23:25:19,297 --- INFO: eta: 0:53:19  epoch [41/60]  loss: 41.2804 (377.3609)  instance_loss: 15.6515 (16.1659)  global_align_loss: 11.9053 (11.8535)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 14.5377 (349.3414)  time: 0.3040 (0.3165)  data: 0.0105 (0.0184)  lr: 0.000011
+2021-01-21 23:28:04,336 --- INFO: eta: 0:50:29  epoch [42/60]  loss: 42.1656 (369.3547)  instance_loss: 15.6782 (16.1508)  global_align_loss: 11.9073 (11.8555)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 14.2348 (341.3484)  time: 0.3046 (0.3164)  data: 0.0107 (0.0183)  lr: 0.000011
+2021-01-21 23:30:47,678 --- INFO: eta: 0:47:39  epoch [43/60]  loss: 41.7609 (361.7269)  instance_loss: 15.5960 (16.1361)  global_align_loss: 11.9196 (11.8577)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.6129 (333.7332)  time: 0.3033 (0.3162)  data: 0.0104 (0.0182)  lr: 0.000011
+2021-01-21 23:33:34,486 --- INFO: eta: 0:44:50  epoch [44/60]  loss: 41.8910 (354.4424)  instance_loss: 15.4798 (16.1222)  global_align_loss: 11.8924 (11.8595)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 14.0714 (326.4607)  time: 0.3069 (0.3161)  data: 0.0111 (0.0181)  lr: 0.000011
+2021-01-21 23:36:20,877 --- INFO: eta: 0:42:01  epoch [45/60]  loss: 41.5413 (347.4786)  instance_loss: 15.7000 (16.1089)  global_align_loss: 11.9219 (11.8613)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.9679 (319.5084)  time: 0.3063 (0.3160)  data: 0.0112 (0.0180)  lr: 0.000011
+2021-01-21 23:39:08,326 --- INFO: eta: 0:39:13  epoch [46/60]  loss: 41.7006 (340.8097)  instance_loss: 15.6384 (16.0954)  global_align_loss: 11.9254 (11.8631)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.9275 (312.8512)  time: 0.3096 (0.3160)  data: 0.0120 (0.0180)  lr: 0.000001
+2021-01-21 23:41:54,918 --- INFO: eta: 0:36:25  epoch [47/60]  loss: 41.1617 (334.4267)  instance_loss: 15.7036 (16.0825)  global_align_loss: 11.9190 (11.8650)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 14.0218 (306.4792)  time: 0.3100 (0.3159)  data: 0.0119 (0.0179)  lr: 0.000001
+2021-01-21 23:44:41,523 --- INFO: eta: 0:33:36  epoch [48/60]  loss: 39.8342 (328.3039)  instance_loss: 15.4665 (16.0705)  global_align_loss: 11.8897 (11.8667)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.3098 (300.3667)  time: 0.3037 (0.3159)  data: 0.0101 (0.0178)  lr: 0.000001
+2021-01-21 23:47:27,223 --- INFO: eta: 0:30:48  epoch [49/60]  loss: 41.0808 (322.4351)  instance_loss: 15.3644 (16.0583)  global_align_loss: 11.8946 (11.8684)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.9056 (294.5084)  time: 0.3051 (0.3158)  data: 0.0100 (0.0178)  lr: 0.000001
+2021-01-21 23:50:13,811 --- INFO: eta: 0:27:59  epoch [50/60]  loss: 40.5466 (316.7993)  instance_loss: 15.4196 (16.0467)  global_align_loss: 11.8899 (11.8701)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.3609 (288.8825)  time: 0.3088 (0.3157)  data: 0.0120 (0.0177)  lr: 0.000001
+2021-01-21 23:50:13,812 --- INFO: Testing
+2021-01-21 23:50:29,949 --- INFO: cmc1_t2i = 0.0133, cmc5_t2i = 0.0412, cmc10_t2i = 0.0682
+2021-01-21 23:50:29,949 --- INFO: cmc1_i2t = 0.0228, cmc5_i2t = 0.1070, cmc10_i2t = 0.2671
+2021-01-21 23:50:29,949 --- INFO: r1 = 0.0400, ap50 = 0.0192
+2021-01-21 23:53:14,383 --- INFO: eta: 0:25:13  epoch [51/60]  loss: 40.2106 (311.3851)  instance_loss: 15.6871 (16.0358)  global_align_loss: 11.9201 (11.8717)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.5026 (283.4776)  time: 0.3048 (0.3162)  data: 0.0103 (0.0182)  lr: 0.000001
+2021-01-21 23:56:00,951 --- INFO: eta: 0:22:25  epoch [52/60]  loss: 39.7117 (306.1742)  instance_loss: 15.3196 (16.0254)  global_align_loss: 11.8869 (11.8731)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.5699 (278.2757)  time: 0.3072 (0.3161)  data: 0.0104 (0.0181)  lr: 0.000001
+2021-01-21 23:58:46,808 --- INFO: eta: 0:19:37  epoch [53/60]  loss: 40.0048 (301.1667)  instance_loss: 15.5537 (16.0151)  global_align_loss: 11.9126 (11.8745)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.5703 (273.2771)  time: 0.3079 (0.3161)  data: 0.0103 (0.0180)  lr: 0.000001
+2021-01-22 00:01:31,326 --- INFO: eta: 0:16:48  epoch [54/60]  loss: 39.8672 (296.3439)  instance_loss: 15.4353 (16.0057)  global_align_loss: 11.8956 (11.8759)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.1176 (268.4624)  time: 0.3031 (0.3159)  data: 0.0105 (0.0180)  lr: 0.000001
+2021-01-22 00:04:16,277 --- INFO: eta: 0:14:00  epoch [55/60]  loss: 39.4294 (291.6925)  instance_loss: 15.3866 (15.9963)  global_align_loss: 11.8856 (11.8771)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.2029 (263.8191)  time: 0.3067 (0.3158)  data: 0.0098 (0.0179)  lr: 0.000001
+2021-01-22 00:07:02,277 --- INFO: eta: 0:11:11  epoch [56/60]  loss: 40.4774 (287.2088)  instance_loss: 15.5700 (15.9871)  global_align_loss: 11.8884 (11.8783)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.2057 (259.3434)  time: 0.3042 (0.3158)  data: 0.0105 (0.0178)  lr: 0.000001
+2021-01-22 00:09:47,522 --- INFO: eta: 0:08:23  epoch [57/60]  loss: 40.8522 (282.8830)  instance_loss: 15.4310 (15.9783)  global_align_loss: 11.9043 (11.8797)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.1100 (255.0250)  time: 0.3043 (0.3157)  data: 0.0103 (0.0177)  lr: 0.000001
+2021-01-22 00:12:33,342 --- INFO: eta: 0:05:35  epoch [58/60]  loss: 40.1870 (278.7046)  instance_loss: 15.5783 (15.9701)  global_align_loss: 11.9035 (11.8810)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.0193 (250.8535)  time: 0.3058 (0.3156)  data: 0.0104 (0.0177)  lr: 0.000001
+2021-01-22 00:15:17,118 --- INFO: eta: 0:02:47  epoch [59/60]  loss: 40.2707 (274.6681)  instance_loss: 15.6067 (15.9618)  global_align_loss: 11.9119 (11.8818)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.6562 (246.8244)  time: 0.3026 (0.3155)  data: 0.0099 (0.0176)  lr: 0.000001
+2021-01-22 00:18:03,930 --- INFO: eta: 0:00:00  epoch [60/60]  loss: 40.7206 (270.7665)  instance_loss: 15.4059 (15.9540)  global_align_loss: 11.9034 (11.8829)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.4966 (242.9296)  time: 0.3063 (0.3154)  data: 0.0100 (0.0175)  lr: 0.000001
+2021-01-22 00:18:03,931 --- INFO: Testing
+2021-01-22 00:18:20,066 --- INFO: cmc1_t2i = 0.0239, cmc5_t2i = 0.0509, cmc10_t2i = 0.0660
+2021-01-22 00:18:20,067 --- INFO: cmc1_i2t = 0.0205, cmc5_i2t = 0.1096, cmc10_i2t = 0.2622
+2021-01-22 00:18:20,067 --- INFO: r1 = 0.0400, ap50 = 0.0190
+2021-01-22 00:18:20,067 --- INFO: Total training time: 2:48:05.121901 (18.9570 s / it)
+2021-01-22 00:18:20,067 --- INFO: Outputdir_path: model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm
+2021-01-22 10:24:48,199 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 10:24:48,200 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: 0.0
+    CMPM: 0.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 1.0
+    MH: 0.1
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (25, 35, 45)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 10:24:48,200 --- INFO: Creating Dataloader...
+2021-01-22 10:24:48,723 --- INFO: Creating Network...
+2021-01-22 10:24:52,230 --- INFO: Total parameters； 43.17M
+2021-01-22 10:24:52,231 --- INFO: Creating Solver...
+2021-01-22 10:26:42,272 --- INFO: eta: 1:48:04  epoch [1/60]  loss: 329.3461 (475.3538)  instance_loss: 17.6188 (18.3450)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 311.7273 (457.0088)  time: 0.2050 (0.2066)  data: 0.0097 (0.0118)  lr: 0.000110
+2021-01-22 10:26:42,272 --- INFO: Testing
+2021-01-22 10:26:58,085 --- INFO: cmc1_t2i = 0.0169, cmc5_t2i = 0.0573, cmc10_t2i = 0.0908
+2021-01-22 10:26:58,085 --- INFO: cmc1_i2t = 0.0224, cmc5_i2t = 0.0865, cmc10_i2t = 0.1451
+2021-01-22 10:26:58,085 --- INFO: r1 = 0.0420, ap50 = 0.0086
+2021-01-22 10:28:50,113 --- INFO: eta: 1:54:53  epoch [2/60]  loss: 175.3082 (363.4289)  instance_loss: 15.7429 (17.1449)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 159.7528 (346.2840)  time: 0.2082 (0.2234)  data: 0.0109 (0.0275)  lr: 0.000209
+2021-01-22 10:30:42,314 --- INFO: eta: 1:50:48  epoch [3/60]  loss: 124.2808 (298.4674)  instance_loss: 14.4589 (16.2483)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 109.4819 (282.2190)  time: 0.2068 (0.2192)  data: 0.0102 (0.0229)  lr: 0.000308
+2021-01-22 10:32:35,452 --- INFO: eta: 1:48:02  epoch [4/60]  loss: 97.7241 (254.5962)  instance_loss: 14.4443 (15.6445)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 83.0024 (238.9517)  time: 0.2093 (0.2176)  data: 0.0122 (0.0208)  lr: 0.000407
+2021-01-22 10:34:28,896 --- INFO: eta: 1:45:41  epoch [5/60]  loss: 71.4809 (222.2299)  instance_loss: 14.6040 (15.2877)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 57.3108 (206.9422)  time: 0.2095 (0.2167)  data: 0.0125 (0.0196)  lr: 0.000506
+2021-01-22 10:36:22,060 --- INFO: eta: 1:43:26  epoch [6/60]  loss: 55.2836 (197.3258)  instance_loss: 15.0396 (15.1372)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 39.8735 (182.1887)  time: 0.2082 (0.2160)  data: 0.0106 (0.0187)  lr: 0.000605
+2021-01-22 10:38:15,676 --- INFO: eta: 1:41:21  epoch [7/60]  loss: 45.4653 (176.2142)  instance_loss: 15.8439 (15.1482)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 29.6215 (161.0660)  time: 0.2104 (0.2157)  data: 0.0125 (0.0181)  lr: 0.000704
+2021-01-22 10:40:09,461 --- INFO: eta: 1:39:20  epoch [8/60]  loss: 38.2127 (159.3329)  instance_loss: 16.6369 (15.2499)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 21.3421 (144.0830)  time: 0.2123 (0.2155)  data: 0.0128 (0.0177)  lr: 0.000803
+2021-01-22 10:42:03,280 --- INFO: eta: 1:37:21  epoch [9/60]  loss: 30.3934 (145.4860)  instance_loss: 16.9517 (15.4036)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.4192 (130.0824)  time: 0.2102 (0.2153)  data: 0.0124 (0.0174)  lr: 0.000902
+2021-01-22 10:43:54,481 --- INFO: eta: 1:35:10  epoch [10/60]  loss: 30.0938 (134.1950)  instance_loss: 17.2373 (15.5544)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.4332 (118.6406)  time: 0.2065 (0.2147)  data: 0.0098 (0.0170)  lr: 0.001001
+2021-01-22 10:43:54,481 --- INFO: Testing
+2021-01-22 10:44:12,441 --- INFO: cmc1_t2i = 0.0286, cmc5_t2i = 0.0831, cmc10_t2i = 0.1303
+2021-01-22 10:44:12,442 --- INFO: cmc1_i2t = 0.0494, cmc5_i2t = 0.1409, cmc10_i2t = 0.1942
+2021-01-22 10:44:12,442 --- INFO: r1 = 0.0833, ap50 = 0.0146
+2021-01-22 10:46:02,500 --- INFO: eta: 1:34:17  epoch [11/60]  loss: 29.3785 (124.8215)  instance_loss: 17.2577 (15.6944)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.2499 (109.1271)  time: 0.2059 (0.2170)  data: 0.0101 (0.0196)  lr: 0.001100
+2021-01-22 10:47:53,206 --- INFO: eta: 1:32:03  epoch [12/60]  loss: 28.9428 (116.8216)  instance_loss: 17.0286 (15.8017)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 11.9708 (101.0199)  time: 0.2056 (0.2163)  data: 0.0101 (0.0190)  lr: 0.001100
+2021-01-22 10:49:45,082 --- INFO: eta: 1:29:56  epoch [13/60]  loss: 27.2021 (109.9953)  instance_loss: 16.7465 (15.8707)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 10.0260 (94.1246)  time: 0.2072 (0.2158)  data: 0.0104 (0.0185)  lr: 0.001100
+2021-01-22 10:51:39,225 --- INFO: eta: 1:27:59  epoch [14/60]  loss: 27.1854 (104.1335)  instance_loss: 16.5665 (15.9019)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 11.0374 (88.2316)  time: 0.2126 (0.2157)  data: 0.0127 (0.0183)  lr: 0.001100
+2021-01-22 10:53:30,952 --- INFO: eta: 1:25:55  epoch [15/60]  loss: 25.3147 (98.9312)  instance_loss: 15.4156 (15.8904)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 9.5532 (83.0407)  time: 0.2072 (0.2154)  data: 0.0101 (0.0180)  lr: 0.001100
+2021-01-22 10:55:24,217 --- INFO: eta: 1:23:57  epoch [16/60]  loss: 22.9286 (94.3445)  instance_loss: 14.3781 (15.8312)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.5337 (78.5133)  time: 0.2096 (0.2152)  data: 0.0119 (0.0178)  lr: 0.001100
+2021-01-22 10:57:18,144 --- INFO: eta: 1:22:01  epoch [17/60]  loss: 25.3422 (90.4838)  instance_loss: 15.6219 (15.7994)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 9.6658 (74.6844)  time: 0.2122 (0.2151)  data: 0.0128 (0.0176)  lr: 0.001100
+2021-01-22 10:59:11,056 --- INFO: eta: 1:20:03  epoch [18/60]  loss: 22.6222 (86.7468)  instance_loss: 13.9781 (15.7146)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.1350 (71.0322)  time: 0.2090 (0.2150)  data: 0.0123 (0.0174)  lr: 0.001100
+2021-01-22 11:01:02,310 --- INFO: eta: 1:18:02  epoch [19/60]  loss: 22.2017 (83.3562)  instance_loss: 13.3392 (15.6053)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 9.1539 (67.7509)  time: 0.2065 (0.2147)  data: 0.0100 (0.0172)  lr: 0.001100
+2021-01-22 11:02:56,119 --- INFO: eta: 1:16:07  epoch [20/60]  loss: 21.0249 (80.3245)  instance_loss: 12.9279 (15.4968)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.0326 (64.8278)  time: 0.2094 (0.2146)  data: 0.0126 (0.0171)  lr: 0.001100
+2021-01-22 11:02:56,120 --- INFO: Testing
+2021-01-22 11:03:10,896 --- INFO: cmc1_t2i = 0.1179, cmc5_t2i = 0.2768, cmc10_t2i = 0.3702
+2021-01-22 11:03:10,896 --- INFO: cmc1_i2t = 0.0807, cmc5_i2t = 0.1757, cmc10_i2t = 0.2306
+2021-01-22 11:03:10,897 --- INFO: r1 = 0.1093, ap50 = 0.0343
+2021-01-22 11:05:00,950 --- INFO: eta: 1:14:33  epoch [21/60]  loss: 22.1119 (77.5120)  instance_loss: 12.8528 (15.3761)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.8247 (62.1359)  time: 0.2045 (0.2156)  data: 0.0096 (0.0181)  lr: 0.001100
+2021-01-22 11:06:51,346 --- INFO: eta: 1:12:30  epoch [22/60]  loss: 19.8361 (74.9465)  instance_loss: 12.6392 (15.2520)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 7.2938 (59.6945)  time: 0.2057 (0.2152)  data: 0.0098 (0.0179)  lr: 0.001100
+2021-01-22 11:08:41,535 --- INFO: eta: 1:10:29  epoch [23/60]  loss: 19.2656 (72.5585)  instance_loss: 12.5948 (15.1318)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 6.6240 (57.4267)  time: 0.2055 (0.2149)  data: 0.0099 (0.0176)  lr: 0.001100
+2021-01-22 11:10:31,705 --- INFO: eta: 1:08:28  epoch [24/60]  loss: 19.4042 (70.3433)  instance_loss: 12.0422 (15.0078)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 6.3680 (55.3355)  time: 0.2054 (0.2145)  data: 0.0098 (0.0174)  lr: 0.001100
+2021-01-22 11:12:21,480 --- INFO: eta: 1:06:28  epoch [25/60]  loss: 20.6206 (68.3182)  instance_loss: 12.1452 (14.8852)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.1726 (53.4330)  time: 0.2051 (0.2142)  data: 0.0097 (0.0171)  lr: 0.001100
+2021-01-22 11:14:11,686 --- INFO: eta: 1:04:29  epoch [26/60]  loss: 12.8619 (66.2208)  instance_loss: 10.0145 (14.7219)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.7712 (51.4989)  time: 0.2057 (0.2139)  data: 0.0095 (0.0169)  lr: 0.000110
+2021-01-22 11:16:01,973 --- INFO: eta: 1:02:31  epoch [27/60]  loss: 12.6144 (64.2285)  instance_loss: 9.8967 (14.5426)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.4780 (49.6859)  time: 0.2054 (0.2137)  data: 0.0099 (0.0167)  lr: 0.000110
+2021-01-22 11:17:52,125 --- INFO: eta: 1:00:34  epoch [28/60]  loss: 12.2710 (62.3663)  instance_loss: 9.7208 (14.3675)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.4844 (47.9988)  time: 0.2049 (0.2135)  data: 0.0096 (0.0166)  lr: 0.000110
+2021-01-22 11:19:42,158 --- INFO: eta: 0:58:36  epoch [29/60]  loss: 11.5952 (60.6249)  instance_loss: 9.4077 (14.1968)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.1825 (46.4280)  time: 0.2055 (0.2132)  data: 0.0099 (0.0164)  lr: 0.000110
+2021-01-22 11:21:32,636 --- INFO: eta: 0:56:40  epoch [30/60]  loss: 11.5551 (58.9912)  instance_loss: 9.2851 (14.0322)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.2108 (44.9590)  time: 0.2055 (0.2130)  data: 0.0100 (0.0163)  lr: 0.000110
+2021-01-22 11:21:32,636 --- INFO: Testing
+2021-01-22 11:21:51,159 --- INFO: cmc1_t2i = 0.2225, cmc5_t2i = 0.4473, cmc10_t2i = 0.5649
+2021-01-22 11:21:51,159 --- INFO: cmc1_i2t = 0.1109, cmc5_i2t = 0.2453, cmc10_i2t = 0.3155
+2021-01-22 11:21:51,159 --- INFO: r1 = 0.1386, ap50 = 0.0473
+2021-01-22 11:23:43,302 --- INFO: eta: 0:55:03  epoch [31/60]  loss: 11.2428 (57.4605)  instance_loss: 9.0895 (13.8718)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.2400 (43.5887)  time: 0.2072 (0.2141)  data: 0.0104 (0.0173)  lr: 0.000110
+2021-01-22 11:25:35,538 --- INFO: eta: 0:53:07  epoch [32/60]  loss: 10.9830 (56.0215)  instance_loss: 8.9413 (13.7171)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.1733 (42.3044)  time: 0.2082 (0.2140)  data: 0.0106 (0.0172)  lr: 0.000110
+2021-01-22 11:27:29,782 --- INFO: eta: 0:51:14  epoch [33/60]  loss: 11.2082 (54.6632)  instance_loss: 8.7366 (13.5684)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 2.4068 (41.0948)  time: 0.2093 (0.2140)  data: 0.0124 (0.0171)  lr: 0.000110
+2021-01-22 11:29:03,802 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 11:29:03,802 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: 0.0
+    CMPM: 0.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 1.0
+    MH: 0.1
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0001
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (40, 50)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 11:29:03,803 --- INFO: Creating Dataloader...
+2021-01-22 11:29:04,328 --- INFO: Creating Network...
+2021-01-22 11:29:07,937 --- INFO: Total parameters； 43.17M
+2021-01-22 11:29:07,938 --- INFO: Creating Solver...
+2021-01-22 11:30:57,919 --- INFO: eta: 1:48:00  epoch [1/60]  loss: 316.6507 (473.9640)  instance_loss: 17.6170 (18.3606)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 299.1089 (455.6034)  time: 0.2045 (0.2065)  data: 0.0096 (0.0116)  lr: 0.000110
+2021-01-22 11:30:57,919 --- INFO: Testing
+2021-01-22 11:31:12,954 --- INFO: cmc1_t2i = 0.0181, cmc5_t2i = 0.0499, cmc10_t2i = 0.0763
+2021-01-22 11:31:12,955 --- INFO: cmc1_i2t = 0.0224, cmc5_i2t = 0.0859, cmc10_i2t = 0.1392
+2021-01-22 11:31:12,955 --- INFO: r1 = 0.0381, ap50 = 0.0072
+2021-01-22 11:33:04,110 --- INFO: eta: 1:54:04  epoch [2/60]  loss: 177.8664 (364.8699)  instance_loss: 15.9226 (17.1870)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 161.7140 (347.6829)  time: 0.2055 (0.2218)  data: 0.0099 (0.0261)  lr: 0.000209
+2021-01-22 11:34:55,608 --- INFO: eta: 1:50:02  epoch [3/60]  loss: 144.0062 (299.4770)  instance_loss: 14.9110 (16.3453)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 128.8731 (283.1317)  time: 0.2073 (0.2177)  data: 0.0101 (0.0217)  lr: 0.000308
+2021-01-22 11:36:47,860 --- INFO: eta: 1:47:16  epoch [4/60]  loss: 86.7538 (254.2921)  instance_loss: 14.9662 (15.8442)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 71.4583 (238.4479)  time: 0.2065 (0.2160)  data: 0.0102 (0.0197)  lr: 0.000407
+2021-01-22 11:38:39,973 --- INFO: eta: 1:44:50  epoch [5/60]  loss: 64.8154 (220.2208)  instance_loss: 15.3811 (15.6249)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 49.1803 (204.5959)  time: 0.2089 (0.2150)  data: 0.0104 (0.0184)  lr: 0.000506
+2021-01-22 11:40:32,973 --- INFO: eta: 1:42:43  epoch [6/60]  loss: 45.8743 (193.6631)  instance_loss: 16.1595 (15.6036)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 29.6227 (178.0596)  time: 0.2090 (0.2146)  data: 0.0116 (0.0177)  lr: 0.000605
+2021-01-22 11:42:26,855 --- INFO: eta: 1:40:47  epoch [7/60]  loss: 34.9993 (171.9866)  instance_loss: 17.1318 (15.7307)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 18.1753 (156.2559)  time: 0.2090 (0.2145)  data: 0.0114 (0.0173)  lr: 0.000704
+2021-01-22 11:44:19,232 --- INFO: eta: 1:38:42  epoch [8/60]  loss: 31.2246 (154.8668)  instance_loss: 17.6889 (15.9137)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.5580 (138.9530)  time: 0.2081 (0.2141)  data: 0.0104 (0.0168)  lr: 0.000803
+2021-01-22 11:46:13,044 --- INFO: eta: 1:36:47  epoch [9/60]  loss: 30.5301 (141.2583)  instance_loss: 17.8489 (16.0954)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 12.9834 (125.1629)  time: 0.2104 (0.2141)  data: 0.0124 (0.0166)  lr: 0.000902
+2021-01-22 11:48:07,444 --- INFO: eta: 1:34:56  epoch [10/60]  loss: 30.5985 (130.2959)  instance_loss: 17.8280 (16.2570)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 13.0611 (114.0388)  time: 0.2110 (0.2142)  data: 0.0128 (0.0165)  lr: 0.001001
+2021-01-22 11:48:07,445 --- INFO: Testing
+2021-01-22 11:48:25,241 --- INFO: cmc1_t2i = 0.0142, cmc5_t2i = 0.0405, cmc10_t2i = 0.0664
+2021-01-22 11:48:25,241 --- INFO: cmc1_i2t = 0.0407, cmc5_i2t = 0.1539, cmc10_i2t = 0.2443
+2021-01-22 11:48:25,241 --- INFO: r1 = 0.0459, ap50 = 0.0062
+2021-01-22 11:50:16,236 --- INFO: eta: 1:34:08  epoch [11/60]  loss: 26.8954 (121.3303)  instance_loss: 18.0979 (16.4005)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.9984 (104.9298)  time: 0.2056 (0.2167)  data: 0.0098 (0.0192)  lr: 0.001100
+2021-01-22 11:52:10,234 --- INFO: eta: 1:32:08  epoch [12/60]  loss: 27.8659 (113.5731)  instance_loss: 18.0500 (16.5165)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 9.9332 (97.0565)  time: 0.2111 (0.2165)  data: 0.0128 (0.0188)  lr: 0.001100
+2021-01-22 11:54:02,229 --- INFO: eta: 1:30:01  epoch [13/60]  loss: 26.3251 (106.9585)  instance_loss: 17.7333 (16.6050)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.6805 (90.3535)  time: 0.2077 (0.2160)  data: 0.0104 (0.0184)  lr: 0.001100
+2021-01-22 11:55:54,382 --- INFO: eta: 1:27:57  epoch [14/60]  loss: 25.8451 (101.2487)  instance_loss: 17.5290 (16.6710)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 7.8759 (84.5777)  time: 0.2076 (0.2157)  data: 0.0102 (0.0181)  lr: 0.001100
+2021-01-22 11:57:47,433 --- INFO: eta: 1:25:57  epoch [15/60]  loss: 29.0840 (96.2554)  instance_loss: 17.1987 (16.7198)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 11.8492 (79.5356)  time: 0.2084 (0.2155)  data: 0.0103 (0.0178)  lr: 0.001100
+2021-01-22 11:59:38,459 --- INFO: eta: 1:23:53  epoch [16/60]  loss: 25.6790 (92.0853)  instance_loss: 17.3670 (16.7557)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 8.3702 (75.3297)  time: 0.2094 (0.2150)  data: 0.0109 (0.0175)  lr: 0.001100
+2021-01-22 12:01:29,787 --- INFO: eta: 1:21:51  epoch [17/60]  loss: 25.0539 (88.1212)  instance_loss: 17.3722 (16.7852)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 7.7765 (71.3359)  time: 0.2062 (0.2147)  data: 0.0100 (0.0172)  lr: 0.001100
+2021-01-22 12:03:23,370 --- INFO: eta: 1:19:55  epoch [18/60]  loss: 23.2434 (84.5767)  instance_loss: 16.5959 (16.7913)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 6.8034 (67.7854)  time: 0.2105 (0.2146)  data: 0.0125 (0.0171)  lr: 0.001100
+2021-01-22 12:05:15,058 --- INFO: eta: 1:17:56  epoch [19/60]  loss: 23.6180 (81.4161)  instance_loss: 16.2530 (16.7628)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 7.5765 (64.6533)  time: 0.2073 (0.2144)  data: 0.0100 (0.0168)  lr: 0.001100
+2021-01-22 12:07:07,725 --- INFO: eta: 1:15:59  epoch [20/60]  loss: 24.5158 (78.5237)  instance_loss: 14.9885 (16.6946)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 9.5006 (61.8292)  time: 0.2079 (0.2142)  data: 0.0105 (0.0167)  lr: 0.001100
+2021-01-22 12:07:07,726 --- INFO: Testing
+2021-01-22 12:07:24,384 --- INFO: cmc1_t2i = 0.0584, cmc5_t2i = 0.1550, cmc10_t2i = 0.2160
+2021-01-22 12:07:24,384 --- INFO: cmc1_i2t = 0.0621, cmc5_i2t = 0.1519, cmc10_i2t = 0.2134
+2021-01-22 12:07:24,384 --- INFO: r1 = 0.0755, ap50 = 0.0185
+2021-01-22 13:22:31,564 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 13:22:31,564 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: 1.0
+    CMPM: 1.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 0.0
+    MH: 0.0
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0011
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (40, 50)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 13:22:31,564 --- INFO: Creating Dataloader...
+2021-01-22 13:22:32,096 --- INFO: Creating Network...
+2021-01-22 13:22:35,841 --- INFO: Total parameters； 54.44M
+2021-01-22 13:22:35,842 --- INFO: Creating Solver...
+2021-01-22 13:23:18,039 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 13:23:18,039 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: 1.0
+    CMPM: 1.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 0.0
+    MH: 0.0
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0011
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (40, 50)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.1
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 13:23:18,039 --- INFO: Creating Dataloader...
+2021-01-22 13:23:18,566 --- INFO: Creating Network...
+2021-01-22 13:23:22,009 --- INFO: Total parameters； 43.17M
+2021-01-22 13:23:22,010 --- INFO: Creating Solver...
+2021-01-22 13:25:13,196 --- INFO: eta: 1:49:14  epoch [1/60]  loss: 43.3726 (45.7596)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 18.2630 (18.5319)  cmpm_loss: 25.1086 (27.2278)  mh_loss: 0.0000 (0.0000)  time: 0.2077 (0.2088)  data: 0.0094 (0.0114)  lr: 0.000011
+2021-01-22 13:25:13,197 --- INFO: Testing
+2021-01-22 13:25:28,727 --- INFO: cmc1_t2i = 0.0442, cmc5_t2i = 0.1181, cmc10_t2i = 0.1818
+2021-01-22 13:25:28,728 --- INFO: cmc1_i2t = 0.0895, cmc5_i2t = 0.2365, cmc10_i2t = 0.3439
+2021-01-22 13:25:28,728 --- INFO: r1 = 0.1425, ap50 = 0.0184
+2021-01-22 13:27:20,688 --- INFO: eta: 1:55:17  epoch [2/60]  loss: 32.3225 (40.8986)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 14.6185 (17.3340)  cmpm_loss: 17.6333 (23.5646)  mh_loss: 0.0000 (0.0000)  time: 0.2091 (0.2242)  data: 0.0095 (0.0264)  lr: 0.000021
+2021-01-22 13:29:12,081 --- INFO: eta: 1:50:49  epoch [3/60]  loss: 23.5417 (35.9900)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 11.1204 (15.5403)  cmpm_loss: 12.5525 (20.4497)  mh_loss: 0.0000 (0.0000)  time: 0.2065 (0.2193)  data: 0.0093 (0.0215)  lr: 0.000031
+2021-01-22 13:30:49,356 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 13:30:49,356 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: 1.0
+    CMPM: 1.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 0.0
+    MH: 0.0
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0011
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (20, 25, 35)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.01
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 13:30:49,356 --- INFO: Creating Dataloader...
+2021-01-22 13:30:49,880 --- INFO: Creating Network...
+2021-01-22 13:30:53,447 --- INFO: Total parameters； 43.17M
+2021-01-22 13:30:53,447 --- INFO: Creating Solver...
+2021-01-22 13:32:43,974 --- INFO: eta: 1:48:34  epoch [1/60]  loss: 46.8858 (47.0745)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 18.6096 (18.6126)  cmpm_loss: 28.2790 (28.4618)  mh_loss: 0.0000 (0.0000)  time: 0.2053 (0.2075)  data: 0.0087 (0.0107)  lr: 0.000001
+2021-01-22 13:32:43,975 --- INFO: Testing
+2021-01-22 13:32:59,090 --- INFO: cmc1_t2i = 0.0049, cmc5_t2i = 0.0208, cmc10_t2i = 0.0387
+2021-01-22 13:32:59,091 --- INFO: cmc1_i2t = 0.0049, cmc5_i2t = 0.0221, cmc10_i2t = 0.0416
+2021-01-22 13:32:59,091 --- INFO: r1 = 0.0104, ap50 = 0.0055
+2021-01-22 13:34:50,559 --- INFO: eta: 1:54:32  epoch [2/60]  loss: 39.6861 (45.6226)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 17.4401 (18.4302)  cmpm_loss: 22.2421 (27.1924)  mh_loss: 0.0000 (0.0000)  time: 0.2081 (0.2227)  data: 0.0095 (0.0254)  lr: 0.000012
+2021-01-22 13:36:42,811 --- INFO: eta: 1:50:35  epoch [3/60]  loss: 29.4842 (41.2951)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 13.3578 (17.2208)  cmpm_loss: 15.7656 (24.0742)  mh_loss: 0.0000 (0.0000)  time: 0.2061 (0.2188)  data: 0.0091 (0.0211)  lr: 0.000023
+2021-01-22 13:38:35,677 --- INFO: eta: 1:47:49  epoch [4/60]  loss: 21.8344 (36.9647)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 10.3606 (15.6246)  cmpm_loss: 11.6319 (21.3400)  mh_loss: 0.0000 (0.0000)  time: 0.2083 (0.2171)  data: 0.0096 (0.0191)  lr: 0.000034
+2021-01-22 13:40:27,903 --- INFO: eta: 1:45:17  epoch [5/60]  loss: 17.8413 (33.3910)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 8.4775 (14.1885)  cmpm_loss: 9.2199 (19.2025)  mh_loss: 0.0000 (0.0000)  time: 0.2065 (0.2159)  data: 0.0093 (0.0178)  lr: 0.000045
+2021-01-22 13:42:20,464 --- INFO: eta: 1:43:01  epoch [6/60]  loss: 15.6068 (30.5021)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 6.9529 (12.9934)  cmpm_loss: 8.6635 (17.5087)  mh_loss: 0.0000 (0.0000)  time: 0.2069 (0.2152)  data: 0.0094 (0.0170)  lr: 0.000056
+2021-01-22 13:44:13,824 --- INFO: eta: 1:40:58  epoch [7/60]  loss: 15.7173 (28.1909)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 6.9209 (12.0187)  cmpm_loss: 8.9347 (16.1722)  mh_loss: 0.0000 (0.0000)  time: 0.2079 (0.2149)  data: 0.0096 (0.0164)  lr: 0.000066
+2021-01-22 13:46:06,256 --- INFO: eta: 1:38:52  epoch [8/60]  loss: 13.3012 (26.3013)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 5.9767 (11.2155)  cmpm_loss: 7.2481 (15.0858)  mh_loss: 0.0000 (0.0000)  time: 0.2072 (0.2144)  data: 0.0096 (0.0160)  lr: 0.000077
+2021-01-22 13:47:59,381 --- INFO: eta: 1:36:52  epoch [9/60]  loss: 12.6953 (24.7323)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 5.6013 (10.5465)  cmpm_loss: 6.9981 (14.1858)  mh_loss: 0.0000 (0.0000)  time: 0.2079 (0.2142)  data: 0.0099 (0.0156)  lr: 0.000088
+2021-01-22 13:49:51,148 --- INFO: eta: 1:34:47  epoch [10/60]  loss: 12.4866 (23.4213)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 5.3217 (9.9846)  cmpm_loss: 6.8754 (13.4367)  mh_loss: 0.0000 (0.0000)  time: 0.2073 (0.2138)  data: 0.0095 (0.0153)  lr: 0.000099
+2021-01-22 13:49:51,148 --- INFO: Testing
+2021-01-22 13:50:08,276 --- INFO: cmc1_t2i = 0.1814, cmc5_t2i = 0.3774, cmc10_t2i = 0.4857
+2021-01-22 13:50:08,276 --- INFO: cmc1_i2t = 0.3881, cmc5_i2t = 0.6831, cmc10_i2t = 0.8003
+2021-01-22 13:50:08,276 --- INFO: r1 = 0.5280, ap50 = 0.0427
+2021-01-22 13:51:59,097 --- INFO: eta: 1:33:57  epoch [11/60]  loss: 11.5182 (22.3090)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 5.2169 (9.5028)  cmpm_loss: 6.3589 (12.8061)  mh_loss: 0.0000 (0.0000)  time: 0.2072 (0.2163)  data: 0.0093 (0.0178)  lr: 0.000110
+2021-01-22 13:53:49,860 --- INFO: eta: 1:31:45  epoch [12/60]  loss: 10.6060 (21.3258)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 4.8415 (9.0698)  cmpm_loss: 6.2380 (12.2560)  mh_loss: 0.0000 (0.0000)  time: 0.2068 (0.2156)  data: 0.0091 (0.0173)  lr: 0.000110
+2021-01-22 13:55:41,427 --- INFO: eta: 1:29:39  epoch [13/60]  loss: 10.7767 (20.4192)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 4.4378 (8.6719)  cmpm_loss: 6.2700 (11.7473)  mh_loss: 0.0000 (0.0000)  time: 0.2066 (0.2151)  data: 0.0093 (0.0168)  lr: 0.000110
+2021-01-22 13:57:32,957 --- INFO: eta: 1:27:35  epoch [14/60]  loss: 10.6751 (19.6034)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 4.3400 (8.3140)  cmpm_loss: 6.3177 (11.2894)  mh_loss: 0.0000 (0.0000)  time: 0.2058 (0.2147)  data: 0.0089 (0.0165)  lr: 0.000110
+2021-01-22 13:59:24,342 --- INFO: eta: 1:25:32  epoch [15/60]  loss: 9.2795 (18.8555)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.7848 (7.9863)  cmpm_loss: 5.5130 (10.8692)  mh_loss: 0.0000 (0.0000)  time: 0.2122 (0.2144)  data: 0.0102 (0.0161)  lr: 0.000110
+2021-01-22 14:01:16,993 --- INFO: eta: 1:23:34  epoch [16/60]  loss: 7.9300 (18.1714)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.5899 (7.6875)  cmpm_loss: 4.7059 (10.4839)  mh_loss: 0.0000 (0.0000)  time: 0.2065 (0.2142)  data: 0.0092 (0.0159)  lr: 0.000110
+2021-01-22 14:03:07,718 --- INFO: eta: 1:21:32  epoch [17/60]  loss: 7.4663 (17.5403)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.3340 (7.4115)  cmpm_loss: 4.0443 (10.1288)  mh_loss: 0.0000 (0.0000)  time: 0.2067 (0.2139)  data: 0.0092 (0.0156)  lr: 0.000110
+2021-01-22 14:04:58,258 --- INFO: eta: 1:19:30  epoch [18/60]  loss: 7.2736 (16.9713)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.0404 (7.1600)  cmpm_loss: 4.1566 (9.8113)  mh_loss: 0.0000 (0.0000)  time: 0.2060 (0.2135)  data: 0.0093 (0.0154)  lr: 0.000110
+2021-01-22 14:06:48,736 --- INFO: eta: 1:17:30  epoch [19/60]  loss: 7.4687 (16.4459)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.1080 (6.9280)  cmpm_loss: 4.3006 (9.5179)  mh_loss: 0.0000 (0.0000)  time: 0.2055 (0.2132)  data: 0.0089 (0.0151)  lr: 0.000110
+2021-01-22 14:08:38,942 --- INFO: eta: 1:15:30  epoch [20/60]  loss: 7.4242 (15.9505)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.8613 (6.7095)  cmpm_loss: 4.5730 (9.2410)  mh_loss: 0.0000 (0.0000)  time: 0.2057 (0.2129)  data: 0.0090 (0.0149)  lr: 0.000110
+2021-01-22 14:08:38,942 --- INFO: Testing
+2021-01-22 14:08:55,551 --- INFO: cmc1_t2i = 0.3894, cmc5_t2i = 0.6158, cmc10_t2i = 0.7178
+2021-01-22 14:08:55,551 --- INFO: cmc1_i2t = 0.5039, cmc5_i2t = 0.7814, cmc10_i2t = 0.8679
+2021-01-22 14:08:55,551 --- INFO: r1 = 0.6574, ap50 = 0.0567
+2021-01-22 14:10:46,170 --- INFO: eta: 1:14:03  epoch [21/60]  loss: 4.7197 (15.4151)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.6595 (6.4742)  cmpm_loss: 2.9652 (8.9409)  mh_loss: 0.0000 (0.0000)  time: 0.2063 (0.2142)  data: 0.0092 (0.0162)  lr: 0.000011
+2021-01-22 14:12:37,490 --- INFO: eta: 1:12:04  epoch [22/60]  loss: 3.5811 (14.8957)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.5025 (6.2489)  cmpm_loss: 2.2537 (8.6469)  mh_loss: 0.0000 (0.0000)  time: 0.2055 (0.2139)  data: 0.0088 (0.0160)  lr: 0.000011
+2021-01-22 14:14:30,203 --- INFO: eta: 1:10:09  epoch [23/60]  loss: 3.6127 (14.4024)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.3923 (6.0378)  cmpm_loss: 2.2410 (8.3647)  mh_loss: 0.0000 (0.0000)  time: 0.2068 (0.2138)  data: 0.0094 (0.0159)  lr: 0.000011
+2021-01-22 14:16:23,052 --- INFO: eta: 1:08:14  epoch [24/60]  loss: 3.3178 (13.9431)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.3086 (5.8405)  cmpm_loss: 1.8199 (8.1026)  mh_loss: 0.0000 (0.0000)  time: 0.2092 (0.2138)  data: 0.0100 (0.0157)  lr: 0.000011
+2021-01-22 14:18:14,887 --- INFO: eta: 1:06:17  epoch [25/60]  loss: 3.1999 (13.5110)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.2574 (5.6564)  cmpm_loss: 1.8493 (7.8546)  mh_loss: 0.0000 (0.0000)  time: 0.2071 (0.2136)  data: 0.0093 (0.0156)  lr: 0.000011
+2021-01-22 14:20:06,741 --- INFO: eta: 1:04:21  epoch [26/60]  loss: 2.9585 (13.1055)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.1647 (5.4828)  cmpm_loss: 1.7762 (7.6226)  mh_loss: 0.0000 (0.0000)  time: 0.2060 (0.2135)  data: 0.0088 (0.0155)  lr: 0.000001
+2021-01-22 14:21:59,740 --- INFO: eta: 1:02:27  epoch [27/60]  loss: 3.0568 (12.7256)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0740 (5.3217)  cmpm_loss: 1.7302 (7.4038)  mh_loss: 0.0000 (0.0000)  time: 0.2092 (0.2135)  data: 0.0098 (0.0154)  lr: 0.000001
+2021-01-22 14:23:51,569 --- INFO: eta: 1:00:32  epoch [28/60]  loss: 2.9062 (12.3753)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0306 (5.1719)  cmpm_loss: 1.7899 (7.2033)  mh_loss: 0.0000 (0.0000)  time: 0.2055 (0.2133)  data: 0.0089 (0.0153)  lr: 0.000001
+2021-01-22 14:25:42,763 --- INFO: eta: 0:58:36  epoch [29/60]  loss: 2.6815 (12.0484)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.1135 (5.0322)  cmpm_loss: 1.6192 (7.0162)  mh_loss: 0.0000 (0.0000)  time: 0.2072 (0.2132)  data: 0.0094 (0.0151)  lr: 0.000001
+2021-01-22 14:27:35,405 --- INFO: eta: 0:56:41  epoch [30/60]  loss: 2.6752 (11.7416)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0360 (4.9014)  cmpm_loss: 1.6457 (6.8402)  mh_loss: 0.0000 (0.0000)  time: 0.2083 (0.2131)  data: 0.0093 (0.0151)  lr: 0.000001
+2021-01-22 14:27:35,406 --- INFO: Testing
+2021-01-22 14:27:52,617 --- INFO: cmc1_t2i = 0.4982, cmc5_t2i = 0.7315, cmc10_t2i = 0.8138
+2021-01-22 14:27:52,617 --- INFO: cmc1_i2t = 0.6152, cmc5_i2t = 0.8643, cmc10_i2t = 0.9242
+2021-01-22 14:27:52,617 --- INFO: r1 = 0.8068, ap50 = 0.0604
+2021-01-22 14:29:43,950 --- INFO: eta: 0:55:02  epoch [31/60]  loss: 3.1161 (11.4555)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0896 (4.7786)  cmpm_loss: 1.8811 (6.6768)  mh_loss: 0.0000 (0.0000)  time: 0.2070 (0.2141)  data: 0.0095 (0.0160)  lr: 0.000001
+2021-01-22 14:31:35,018 --- INFO: eta: 0:53:06  epoch [32/60]  loss: 2.6133 (11.1844)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.1326 (4.6638)  cmpm_loss: 1.5899 (6.5206)  mh_loss: 0.0000 (0.0000)  time: 0.2062 (0.2139)  data: 0.0092 (0.0158)  lr: 0.000001
+2021-01-22 14:33:26,858 --- INFO: eta: 0:51:10  epoch [33/60]  loss: 2.3701 (10.9300)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0889 (4.5554)  cmpm_loss: 1.4494 (6.3746)  mh_loss: 0.0000 (0.0000)  time: 0.2074 (0.2138)  data: 0.0097 (0.0157)  lr: 0.000001
+2021-01-22 14:35:18,362 --- INFO: eta: 0:49:15  epoch [34/60]  loss: 2.4318 (10.6902)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0780 (4.4530)  cmpm_loss: 1.3921 (6.2371)  mh_loss: 0.0000 (0.0000)  time: 0.2060 (0.2137)  data: 0.0090 (0.0156)  lr: 0.000001
+2021-01-22 14:37:09,743 --- INFO: eta: 0:47:20  epoch [35/60]  loss: 3.1575 (10.4625)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.1336 (4.3562)  cmpm_loss: 1.7598 (6.1063)  mh_loss: 0.0000 (0.0000)  time: 0.2075 (0.2135)  data: 0.0092 (0.0155)  lr: 0.000001
+2021-01-22 14:39:01,741 --- INFO: eta: 0:45:25  epoch [36/60]  loss: 2.3152 (10.2464)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9289 (4.2645)  cmpm_loss: 1.3827 (5.9819)  mh_loss: 0.0000 (0.0000)  time: 0.2082 (0.2135)  data: 0.0094 (0.0154)  lr: 0.000000
+2021-01-22 14:40:52,269 --- INFO: eta: 0:43:29  epoch [37/60]  loss: 2.7838 (10.0399)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9911 (4.1775)  cmpm_loss: 1.6625 (5.8624)  mh_loss: 0.0000 (0.0000)  time: 0.2069 (0.2133)  data: 0.0091 (0.0153)  lr: 0.000000
+2021-01-22 14:42:42,655 --- INFO: eta: 0:41:34  epoch [38/60]  loss: 2.3166 (9.8467)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9350 (4.0956)  cmpm_loss: 1.2884 (5.7512)  mh_loss: 0.0000 (0.0000)  time: 0.2069 (0.2132)  data: 0.0091 (0.0152)  lr: 0.000000
+2021-01-22 14:44:33,481 --- INFO: eta: 0:39:39  epoch [39/60]  loss: 2.4546 (9.6616)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0639 (4.0175)  cmpm_loss: 1.4330 (5.6441)  mh_loss: 0.0000 (0.0000)  time: 0.2073 (0.2130)  data: 0.0093 (0.0151)  lr: 0.000000
+2021-01-22 14:46:25,028 --- INFO: eta: 0:37:45  epoch [40/60]  loss: 2.4834 (9.4881)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9784 (3.9434)  cmpm_loss: 1.3893 (5.5447)  mh_loss: 0.0000 (0.0000)  time: 0.2079 (0.2129)  data: 0.0094 (0.0150)  lr: 0.000000
+2021-01-22 14:46:25,029 --- INFO: Testing
+2021-01-22 14:46:40,395 --- INFO: cmc1_t2i = 0.5008, cmc5_t2i = 0.7339, cmc10_t2i = 0.8183
+2021-01-22 14:46:40,396 --- INFO: cmc1_i2t = 0.6187, cmc5_i2t = 0.8647, cmc10_i2t = 0.9242
+2021-01-22 14:46:40,396 --- INFO: r1 = 0.8116, ap50 = 0.0605
+2021-01-22 14:48:30,968 --- INFO: eta: 0:35:58  epoch [41/60]  loss: 2.2492 (9.3215)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9853 (3.8730)  cmpm_loss: 1.4711 (5.4486)  mh_loss: 0.0000 (0.0000)  time: 0.2076 (0.2135)  data: 0.0093 (0.0156)  lr: 0.000000
+2021-01-22 14:50:22,218 --- INFO: eta: 0:34:03  epoch [42/60]  loss: 2.7954 (9.1613)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0748 (3.8055)  cmpm_loss: 1.7418 (5.3557)  mh_loss: 0.0000 (0.0000)  time: 0.2065 (0.2134)  data: 0.0089 (0.0155)  lr: 0.000000
+2021-01-22 14:52:14,164 --- INFO: eta: 0:32:09  epoch [43/60]  loss: 2.8076 (9.0112)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0250 (3.7416)  cmpm_loss: 1.8188 (5.2696)  mh_loss: 0.0000 (0.0000)  time: 0.2060 (0.2133)  data: 0.0091 (0.0154)  lr: 0.000000
+2021-01-22 14:54:04,515 --- INFO: eta: 0:30:14  epoch [44/60]  loss: 2.7566 (8.8691)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0203 (3.6808)  cmpm_loss: 1.5900 (5.1883)  mh_loss: 0.0000 (0.0000)  time: 0.2054 (0.2132)  data: 0.0087 (0.0153)  lr: 0.000000
+2021-01-22 14:55:55,276 --- INFO: eta: 0:28:20  epoch [45/60]  loss: 2.3761 (8.7308)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0531 (3.6223)  cmpm_loss: 1.2344 (5.1085)  mh_loss: 0.0000 (0.0000)  time: 0.2066 (0.2131)  data: 0.0091 (0.0152)  lr: 0.000000
+2021-01-22 14:57:47,226 --- INFO: eta: 0:26:26  epoch [46/60]  loss: 2.3055 (8.5994)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9989 (3.5664)  cmpm_loss: 1.5759 (5.0330)  mh_loss: 0.0000 (0.0000)  time: 0.2073 (0.2130)  data: 0.0094 (0.0151)  lr: 0.000000
+2021-01-22 14:59:38,197 --- INFO: eta: 0:24:32  epoch [47/60]  loss: 3.1022 (8.4726)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0480 (3.5128)  cmpm_loss: 1.8580 (4.9598)  mh_loss: 0.0000 (0.0000)  time: 0.2054 (0.2130)  data: 0.0089 (0.0151)  lr: 0.000000
+2021-01-22 15:01:29,226 --- INFO: eta: 0:22:38  epoch [48/60]  loss: 2.5239 (8.3519)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.0270 (3.4614)  cmpm_loss: 1.5394 (4.8906)  mh_loss: 0.0000 (0.0000)  time: 0.2054 (0.2129)  data: 0.0088 (0.0150)  lr: 0.000000
+2021-01-22 15:03:19,796 --- INFO: eta: 0:20:45  epoch [49/60]  loss: 2.3037 (8.2349)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9576 (3.4120)  cmpm_loss: 1.3785 (4.8229)  mh_loss: 0.0000 (0.0000)  time: 0.2071 (0.2128)  data: 0.0092 (0.0149)  lr: 0.000000
+2021-01-22 15:05:10,300 --- INFO: eta: 0:18:51  epoch [50/60]  loss: 2.1848 (8.1223)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9417 (3.3645)  cmpm_loss: 1.2054 (4.7578)  mh_loss: 0.0000 (0.0000)  time: 0.2056 (0.2127)  data: 0.0088 (0.0148)  lr: 0.000000
+2021-01-22 15:05:10,300 --- INFO: Testing
+2021-01-22 15:05:13,448 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 15:05:13,449 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: 1.0
+    CMPM: 1.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 0.0
+    MH: 0.0
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0011
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (20, 25, 35)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.01
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 15:05:13,449 --- INFO: Creating Dataloader...
+2021-01-22 15:05:14,067 --- INFO: Creating Network...
+2021-01-22 15:05:18,172 --- INFO: Total parameters； 43.17M
+2021-01-22 15:05:18,172 --- INFO: Creating Solver...
+2021-01-22 15:05:27,072 --- INFO: cmc1_t2i = 0.4985, cmc5_t2i = 0.7332, cmc10_t2i = 0.8180
+2021-01-22 15:05:27,072 --- INFO: cmc1_i2t = 0.6213, cmc5_i2t = 0.8660, cmc10_i2t = 0.9249
+2021-01-22 15:05:27,072 --- INFO: r1 = 0.8113, ap50 = 0.0604
+2021-01-22 15:05:58,993 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 15:05:58,993 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: 1.0
+    CMPM: 1.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 0.0
+    MH: 0.0
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0011
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (20, 25, 35)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.01
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 15:05:58,993 --- INFO: Creating Dataloader...
+2021-01-22 15:05:59,522 --- INFO: Creating Network...
+2021-01-22 15:06:02,784 --- INFO: Total parameters； 43.17M
+2021-01-22 15:06:02,784 --- INFO: Creating Solver...
+2021-01-22 15:07:18,567 --- INFO: eta: 0:17:00  epoch [51/60]  loss: 2.3467 (8.0153)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9777 (3.3191)  cmpm_loss: 1.4009 (4.6962)  mh_loss: 0.0000 (0.0000)  time: 0.2071 (0.2132)  data: 0.0093 (0.0154)  lr: 0.000000
+2021-01-22 15:09:09,442 --- INFO: eta: 0:15:07  epoch [52/60]  loss: 2.2886 (7.9121)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.9168 (3.2753)  cmpm_loss: 1.2442 (4.6368)  mh_loss: 0.0000 (0.0000)  time: 0.2056 (0.2131)  data: 0.0090 (0.0153)  lr: 0.000000
+2021-01-22 15:10:21,191 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 15:10:21,191 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 7
+  LOSS:
+    CMPC: 1.0
+    CMPM: 1.0
+    GLOBALALIGN: 0.0
+    INSTANCE: 0.0
+    MH: 0.0
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0011
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (40, 50)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.01
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 15:10:21,191 --- INFO: Creating Dataloader...
+2021-01-22 15:10:21,715 --- INFO: Creating Network...
+2021-01-22 15:10:25,008 --- INFO: Total parameters； 43.17M
+2021-01-22 15:10:25,008 --- INFO: Creating Solver...
+2021-01-22 15:11:10,061 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm"
+2021-01-22 15:11:10,061 --- INFO: 
+=====> Model configuration <=====
+DATALOADER:
+  NUM_WORKERS: 8
+DATASET:
+  ANNO_DIR: ./dataset/cuhkpedes/
+  DICTIONARY_FILE: ./dataset/cuhkpedes/dictionary.npy
+  IMG_DIR: /home/wuziqiang/data/CUHK-PEDES/CUHK_PEDES_prepare/imgs_origin_python
+  NAME: CUHKPEDES
+  TEST_FILE: ./dataset/cuhkpedes/test.npy
+  TRAIN_FILE: ./dataset/cuhkpedes/train.npy
+INPUT:
+  HEIGHT: 384
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  WIDTH: 128
+MODEL:
+  BN_LAYER: True
+  CHECKPOINT_STEP: 10
+  DEVICE: CUDA
+  EMBEDDING_SIZE: 1024
+  EVALUATE_METRIC: cmc1_t2i
+  GPUID: 6
+  LOSS:
+    CMPC: 0.0
+    CMPM: 0.0
+    GLOBALALIGN: 1.0
+    INSTANCE: 1.0
+    MH: 0.0
+  SAVE: False
+  TEXTUAL_MODEL:
+    ATN_LAYERS: 
+    BIDIRECTION: True
+    DROPOUT: 0.0
+    EMBEDDING_SIZE: 768
+    HIDDEN_SIZE: 512
+    MAX_LENGTH: 80
+    NUM_LAYERS: 1
+  TEXTUAL_MODEL_NAME: bilstm
+  VISUAL_MODEL:
+    RES5_DILATION: 1
+    RES5_STRIDE: 2
+    USE_C4: False
+  VISUAL_MODEL_NAME: resnet50
+SOLVER:
+  ADAM_ALPHA: 0.9
+  ADAM_BETA: 0.999
+  BASE_LR: 0.0011
+  BATCH_SIZE: 64
+  BIAS_LR_FACTOR: 2
+  EPSILON: 1e-08
+  GAMMA: 0.1
+  LRSCHEDULER: step
+  NUM_EPOCHES: 60
+  POWER: 0.9
+  STEPS: (35, 50)
+  TARGET_LR: 0.0001
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.01
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 4e-05
+  WEIGHT_DECAY_BIAS: 0
+TEST:
+  BATCH_SIZE: 64
+2021-01-22 15:11:10,062 --- INFO: Creating Dataloader...
+2021-01-22 15:11:10,601 --- INFO: Creating Network...
+2021-01-22 15:11:14,138 --- INFO: Total parameters； 43.17M
+2021-01-22 15:11:14,139 --- INFO: Creating Solver...
+2021-01-22 15:12:17,276 --- INFO: eta: 1:50:15  epoch [1/60]  loss: 46.8574 (47.0484)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 18.6130 (18.6125)  cmpm_loss: 28.2397 (28.4359)  mh_loss: 0.0000 (0.0000)  time: 0.2064 (0.2108)  data: 0.0095 (0.0124)  lr: 0.000001
+2021-01-22 15:12:17,276 --- INFO: Testing
+2021-01-22 15:12:33,072 --- INFO: cmc1_t2i = 0.0037, cmc5_t2i = 0.0207, cmc10_t2i = 0.0359
+2021-01-22 15:12:33,073 --- INFO: cmc1_i2t = 0.0046, cmc5_i2t = 0.0192, cmc10_i2t = 0.0371
+2021-01-22 15:12:33,073 --- INFO: r1 = 0.0085, ap50 = 0.0056
+2021-01-22 15:13:54,739 --- INFO: eta: 2:37:47  epoch [1/60]  loss: 30.3956 (30.9015)  instance_loss: 19.0108 (19.1386)  global_align_loss: 11.3599 (11.7629)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2998 (0.3016)  data: 0.0096 (0.0111)  lr: 0.000001
+2021-01-22 15:13:54,740 --- INFO: Testing
+2021-01-22 15:14:11,289 --- INFO: cmc1_t2i = 0.0042, cmc5_t2i = 0.0161, cmc10_t2i = 0.0275
+2021-01-22 15:14:11,290 --- INFO: cmc1_i2t = 0.0049, cmc5_i2t = 0.0163, cmc10_i2t = 0.0345
+2021-01-22 15:14:11,290 --- INFO: r1 = 0.0068, ap50 = 0.0046
+2021-01-22 15:14:24,175 --- INFO: eta: 1:55:32  epoch [2/60]  loss: 39.5862 (45.4574)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 17.3430 (18.4150)  cmpm_loss: 22.3224 (27.0424)  mh_loss: 0.0000 (0.0000)  time: 0.2065 (0.2247)  data: 0.0095 (0.0268)  lr: 0.000012
+2021-01-22 15:16:15,991 --- INFO: eta: 1:51:06  epoch [3/60]  loss: 28.9229 (41.1534)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 13.3687 (17.1956)  cmpm_loss: 15.3532 (23.9578)  mh_loss: 0.0000 (0.0000)  time: 0.2080 (0.2198)  data: 0.0095 (0.0218)  lr: 0.000023
+2021-01-22 15:16:52,936 --- INFO: eta: 2:43:42  epoch [2/60]  loss: 23.6076 (28.5574)  instance_loss: 16.0913 (18.2903)  global_align_loss: 7.4685 (10.2671)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3031 (0.3183)  data: 0.0100 (0.0271)  lr: 0.000012
+2021-01-22 15:18:07,876 --- INFO: eta: 1:47:58  epoch [4/60]  loss: 21.6644 (36.8410)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 10.0364 (15.6092)  cmpm_loss: 11.6363 (21.2318)  mh_loss: 0.0000 (0.0000)  time: 0.2081 (0.2175)  data: 0.0098 (0.0194)  lr: 0.000034
+2021-01-22 15:19:34,261 --- INFO: eta: 2:38:20  epoch [3/60]  loss: 18.6063 (25.6548)  instance_loss: 11.8996 (16.5213)  global_align_loss: 6.5548 (9.1335)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3001 (0.3133)  data: 0.0091 (0.0220)  lr: 0.000023
+2021-01-22 15:19:59,954 --- INFO: eta: 1:45:23  epoch [5/60]  loss: 18.6063 (33.3071)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 8.3153 (14.1778)  cmpm_loss: 10.3256 (19.1293)  mh_loss: 0.0000 (0.0000)  time: 0.2082 (0.2161)  data: 0.0101 (0.0179)  lr: 0.000045
+2021-01-22 15:21:52,710 --- INFO: eta: 1:43:08  epoch [6/60]  loss: 16.5985 (30.4416)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 7.2897 (12.9866)  cmpm_loss: 9.0712 (17.4551)  mh_loss: 0.0000 (0.0000)  time: 0.2075 (0.2154)  data: 0.0094 (0.0170)  lr: 0.000056
+2021-01-22 15:22:15,734 --- INFO: eta: 2:34:20  epoch [4/60]  loss: 13.5856 (22.8533)  instance_loss: 7.9879 (14.4961)  global_align_loss: 5.7415 (8.3571)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3009 (0.3108)  data: 0.0094 (0.0193)  lr: 0.000034
+2021-01-22 15:23:46,060 --- INFO: eta: 1:41:03  epoch [7/60]  loss: 14.8067 (28.1325)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 6.5150 (12.0148)  cmpm_loss: 8.1247 (16.1177)  mh_loss: 0.0000 (0.0000)  time: 0.2112 (0.2151)  data: 0.0106 (0.0165)  lr: 0.000066
+2021-01-22 15:24:59,025 --- INFO: eta: 2:31:12  epoch [5/60]  loss: 11.0931 (20.4913)  instance_loss: 5.6526 (12.7158)  global_align_loss: 5.3727 (7.7755)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3003 (0.3101)  data: 0.0094 (0.0179)  lr: 0.000045
+2021-01-22 15:25:40,053 --- INFO: eta: 1:39:06  epoch [8/60]  loss: 13.4251 (26.2446)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 6.0421 (11.2122)  cmpm_loss: 7.0370 (15.0324)  mh_loss: 0.0000 (0.0000)  time: 0.2096 (0.2150)  data: 0.0107 (0.0161)  lr: 0.000077
+2021-01-22 15:27:33,982 --- INFO: eta: 1:37:10  epoch [9/60]  loss: 12.7137 (24.6948)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 5.5476 (10.5482)  cmpm_loss: 7.3307 (14.1466)  mh_loss: 0.0000 (0.0000)  time: 0.2109 (0.2149)  data: 0.0116 (0.0159)  lr: 0.000088
+2021-01-22 15:27:43,005 --- INFO: eta: 2:28:18  epoch [6/60]  loss: 9.5594 (18.6209)  instance_loss: 4.6816 (11.3037)  global_align_loss: 4.8846 (7.3172)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3023 (0.3097)  data: 0.0100 (0.0172)  lr: 0.000056
+2021-01-22 15:29:27,037 --- INFO: eta: 1:35:09  epoch [10/60]  loss: 12.4002 (23.4003)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 5.4871 (9.9904)  cmpm_loss: 6.9207 (13.4098)  mh_loss: 0.0000 (0.0000)  time: 0.2098 (0.2146)  data: 0.0102 (0.0156)  lr: 0.000099
+2021-01-22 15:29:27,037 --- INFO: Testing
+2021-01-22 15:29:43,442 --- INFO: cmc1_t2i = 0.2196, cmc5_t2i = 0.4288, cmc10_t2i = 0.5387
+2021-01-22 15:29:43,443 --- INFO: cmc1_i2t = 0.4249, cmc5_i2t = 0.7118, cmc10_i2t = 0.8172
+2021-01-22 15:29:43,443 --- INFO: r1 = 0.5335, ap50 = 0.0472
+2021-01-22 15:30:27,781 --- INFO: eta: 2:25:33  epoch [7/60]  loss: 8.4927 (17.1395)  instance_loss: 3.9326 (10.1898)  global_align_loss: 4.6442 (6.9497)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3042 (0.3097)  data: 0.0116 (0.0167)  lr: 0.000066
+2021-01-22 15:31:34,360 --- INFO: eta: 1:34:13  epoch [11/60]  loss: 11.5008 (22.2979)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 5.2402 (9.5128)  cmpm_loss: 6.4780 (12.7851)  mh_loss: 0.0000 (0.0000)  time: 0.2064 (0.2169)  data: 0.0093 (0.0180)  lr: 0.000110
+2021-01-22 15:33:13,063 --- INFO: eta: 2:22:52  epoch [8/60]  loss: 8.4834 (15.9505)  instance_loss: 3.8179 (9.3034)  global_align_loss: 4.5090 (6.6471)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3058 (0.3099)  data: 0.0102 (0.0165)  lr: 0.000077
+2021-01-22 15:33:25,499 --- INFO: eta: 1:32:01  epoch [12/60]  loss: 10.9704 (21.2984)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 4.7202 (9.0753)  cmpm_loss: 6.2878 (12.2231)  mh_loss: 0.0000 (0.0000)  time: 0.2066 (0.2162)  data: 0.0098 (0.0175)  lr: 0.000110
+2021-01-22 15:35:17,367 --- INFO: eta: 1:29:54  epoch [13/60]  loss: 9.8260 (20.3935)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 4.1836 (8.6773)  cmpm_loss: 5.5854 (11.7162)  mh_loss: 0.0000 (0.0000)  time: 0.2079 (0.2158)  data: 0.0098 (0.0171)  lr: 0.000110
+2021-01-22 15:35:56,962 --- INFO: eta: 2:20:01  epoch [9/60]  loss: 7.7045 (14.9812)  instance_loss: 3.2732 (8.5854)  global_align_loss: 4.4133 (6.3958)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3047 (0.3097)  data: 0.0114 (0.0162)  lr: 0.000088
+2021-01-22 15:37:08,215 --- INFO: eta: 1:27:47  epoch [14/60]  loss: 8.8566 (19.5647)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 4.0019 (8.3160)  cmpm_loss: 4.8271 (11.2487)  mh_loss: 0.0000 (0.0000)  time: 0.2028 (0.2152)  data: 0.0090 (0.0167)  lr: 0.000110
+2021-01-22 15:38:40,531 --- INFO: eta: 2:17:11  epoch [10/60]  loss: 7.4970 (14.1723)  instance_loss: 3.1472 (7.9917)  global_align_loss: 4.2536 (6.1807)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3001 (0.3094)  data: 0.0103 (0.0159)  lr: 0.000099
+2021-01-22 15:38:40,531 --- INFO: Testing
+2021-01-22 15:38:57,389 --- INFO: cmc1_t2i = 0.2713, cmc5_t2i = 0.5003, cmc10_t2i = 0.6038
+2021-01-22 15:38:57,389 --- INFO: cmc1_i2t = 0.4821, cmc5_i2t = 0.7668, cmc10_i2t = 0.8539
+2021-01-22 15:38:57,389 --- INFO: r1 = 0.6093, ap50 = 0.0506
+2021-01-22 15:39:01,199 --- INFO: eta: 1:25:48  epoch [15/60]  loss: 9.8223 (18.8239)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 4.0898 (7.9884)  cmpm_loss: 5.7365 (10.8355)  mh_loss: 0.0000 (0.0000)  time: 0.2066 (0.2150)  data: 0.0101 (0.0164)  lr: 0.000110
+2021-01-22 15:40:53,926 --- INFO: eta: 1:23:49  epoch [16/60]  loss: 8.7516 (18.1507)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.5995 (7.6895)  cmpm_loss: 5.0954 (10.4612)  mh_loss: 0.0000 (0.0000)  time: 0.2066 (0.2148)  data: 0.0092 (0.0162)  lr: 0.000110
+2021-01-22 15:41:40,165 --- INFO: eta: 2:15:33  epoch [11/60]  loss: 7.2354 (13.4857)  instance_loss: 3.0641 (7.4926)  global_align_loss: 4.1291 (5.9931)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3038 (0.3120)  data: 0.0097 (0.0184)  lr: 0.000110
+2021-01-22 15:42:45,840 --- INFO: eta: 1:21:48  epoch [17/60]  loss: 8.3941 (17.5275)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.4401 (7.4144)  cmpm_loss: 4.6261 (10.1131)  mh_loss: 0.0000 (0.0000)  time: 0.2080 (0.2146)  data: 0.0097 (0.0160)  lr: 0.000110
+2021-01-22 15:44:22,530 --- INFO: eta: 2:12:33  epoch [12/60]  loss: 6.6895 (12.8778)  instance_loss: 2.5666 (7.0530)  global_align_loss: 4.0241 (5.8248)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3008 (0.3114)  data: 0.0094 (0.0179)  lr: 0.000110
+2021-01-22 15:44:39,014 --- INFO: eta: 1:19:52  epoch [18/60]  loss: 7.2374 (16.9525)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.2550 (7.1620)  cmpm_loss: 4.2642 (9.7905)  mh_loss: 0.0000 (0.0000)  time: 0.2072 (0.2145)  data: 0.0098 (0.0158)  lr: 0.000110
+2021-01-22 15:46:30,026 --- INFO: eta: 1:17:51  epoch [19/60]  loss: 7.6191 (16.4193)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 3.1933 (6.9263)  cmpm_loss: 4.2688 (9.4930)  mh_loss: 0.0000 (0.0000)  time: 0.2050 (0.2142)  data: 0.0089 (0.0156)  lr: 0.000110
+2021-01-22 15:47:07,669 --- INFO: eta: 2:09:45  epoch [13/60]  loss: 6.1633 (12.3357)  instance_loss: 2.4787 (6.6641)  global_align_loss: 3.7481 (5.6716)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3047 (0.3114)  data: 0.0099 (0.0176)  lr: 0.000110
+2021-01-22 15:48:22,405 --- INFO: eta: 1:15:54  epoch [20/60]  loss: 6.4980 (15.9326)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.8712 (6.7088)  cmpm_loss: 3.6831 (9.2238)  mh_loss: 0.0000 (0.0000)  time: 0.2081 (0.2140)  data: 0.0101 (0.0155)  lr: 0.000110
+2021-01-22 15:48:22,405 --- INFO: Testing
+2021-01-22 15:48:40,444 --- INFO: cmc1_t2i = 0.3759, cmc5_t2i = 0.6243, cmc10_t2i = 0.7263
+2021-01-22 15:48:40,444 --- INFO: cmc1_i2t = 0.5189, cmc5_i2t = 0.7944, cmc10_i2t = 0.8774
+2021-01-22 15:48:40,444 --- INFO: r1 = 0.7014, ap50 = 0.0581
+2021-01-22 15:49:54,300 --- INFO: eta: 2:07:02  epoch [14/60]  loss: 5.8969 (11.8531)  instance_loss: 2.0899 (6.3197)  global_align_loss: 3.6454 (5.5334)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3092 (0.3115)  data: 0.0128 (0.0174)  lr: 0.000110
+2021-01-22 15:50:32,457 --- INFO: eta: 1:14:30  epoch [21/60]  loss: 6.4725 (15.4734)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.8583 (6.5056)  cmpm_loss: 3.5470 (8.9679)  mh_loss: 0.0000 (0.0000)  time: 0.2050 (0.2155)  data: 0.0094 (0.0169)  lr: 0.000110
+2021-01-22 15:52:25,251 --- INFO: eta: 1:12:32  epoch [22/60]  loss: 6.3168 (15.0443)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.7385 (6.3166)  cmpm_loss: 3.5948 (8.7278)  mh_loss: 0.0000 (0.0000)  time: 0.2075 (0.2153)  data: 0.0096 (0.0167)  lr: 0.000110
+2021-01-22 15:52:39,600 --- INFO: eta: 2:04:15  epoch [15/60]  loss: 5.8162 (11.4150)  instance_loss: 2.0502 (6.0099)  global_align_loss: 3.7162 (5.4050)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3032 (0.3114)  data: 0.0101 (0.0172)  lr: 0.000110
+2021-01-22 15:54:18,385 --- INFO: eta: 1:10:36  epoch [23/60]  loss: 5.6457 (14.6455)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.5066 (6.1389)  cmpm_loss: 3.2221 (8.5067)  mh_loss: 0.0000 (0.0000)  time: 0.2080 (0.2152)  data: 0.0103 (0.0166)  lr: 0.000110
+2021-01-22 15:55:23,029 --- INFO: eta: 2:01:24  epoch [16/60]  loss: 5.4494 (11.0209)  instance_loss: 1.8945 (5.7323)  global_align_loss: 3.5806 (5.2886)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3024 (0.3112)  data: 0.0100 (0.0169)  lr: 0.000110
+2021-01-22 15:56:12,090 --- INFO: eta: 1:08:40  epoch [24/60]  loss: 5.0132 (14.2656)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.3049 (5.9714)  cmpm_loss: 2.7434 (8.2942)  mh_loss: 0.0000 (0.0000)  time: 0.2107 (0.2151)  data: 0.0113 (0.0165)  lr: 0.000110
+2021-01-22 15:58:04,610 --- INFO: eta: 1:58:28  epoch [17/60]  loss: 5.2602 (10.6610)  instance_loss: 1.6942 (5.4814)  global_align_loss: 3.5907 (5.1795)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3003 (0.3107)  data: 0.0095 (0.0166)  lr: 0.000110
+2021-01-22 15:58:06,114 --- INFO: eta: 1:06:45  epoch [25/60]  loss: 5.2375 (13.9006)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.2619 (5.8117)  cmpm_loss: 2.8683 (8.0889)  mh_loss: 0.0000 (0.0000)  time: 0.2127 (0.2151)  data: 0.0122 (0.0164)  lr: 0.000110
+2021-01-22 15:59:59,482 --- INFO: eta: 1:04:49  epoch [26/60]  loss: 5.8374 (13.5616)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.1963 (5.6617)  cmpm_loss: 3.3746 (7.8999)  mh_loss: 0.0000 (0.0000)  time: 0.2099 (0.2150)  data: 0.0103 (0.0163)  lr: 0.000110
+2021-01-22 16:00:47,067 --- INFO: eta: 1:55:36  epoch [18/60]  loss: 5.0985 (10.3315)  instance_loss: 1.7737 (5.2541)  global_align_loss: 3.3931 (5.0774)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2976 (0.3104)  data: 0.0099 (0.0164)  lr: 0.000110
+2021-01-22 16:01:52,878 --- INFO: eta: 1:02:53  epoch [27/60]  loss: 5.6895 (13.2448)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 2.0450 (5.5205)  cmpm_loss: 3.5794 (7.7244)  mh_loss: 0.0000 (0.0000)  time: 0.2100 (0.2150)  data: 0.0099 (0.0162)  lr: 0.000110
+2021-01-22 16:03:30,736 --- INFO: eta: 1:52:48  epoch [19/60]  loss: 5.0408 (10.0303)  instance_loss: 1.5719 (5.0473)  global_align_loss: 3.3962 (4.9830)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3038 (0.3103)  data: 0.0101 (0.0162)  lr: 0.000110
+2021-01-22 16:03:46,201 --- INFO: eta: 1:00:58  epoch [28/60]  loss: 4.7204 (12.9409)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.9319 (5.3862)  cmpm_loss: 2.8138 (7.5547)  mh_loss: 0.0000 (0.0000)  time: 0.2093 (0.2149)  data: 0.0103 (0.0161)  lr: 0.000110
+2021-01-22 16:05:39,684 --- INFO: eta: 0:59:03  epoch [29/60]  loss: 5.8404 (12.6520)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.9681 (5.2583)  cmpm_loss: 3.5482 (7.3937)  mh_loss: 0.0000 (0.0000)  time: 0.2082 (0.2148)  data: 0.0106 (0.0160)  lr: 0.000110
+2021-01-22 16:06:13,188 --- INFO: eta: 1:49:57  epoch [20/60]  loss: 4.7886 (9.7526)  instance_loss: 1.5808 (4.8579)  global_align_loss: 3.2230 (4.8948)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3030 (0.3100)  data: 0.0097 (0.0160)  lr: 0.000110
+2021-01-22 16:06:13,189 --- INFO: Testing
+2021-01-22 16:06:29,571 --- INFO: cmc1_t2i = 0.3871, cmc5_t2i = 0.6117, cmc10_t2i = 0.7058
+2021-01-22 16:06:29,571 --- INFO: cmc1_i2t = 0.5654, cmc5_i2t = 0.8282, cmc10_i2t = 0.8982
+2021-01-22 16:06:29,571 --- INFO: r1 = 0.7202, ap50 = 0.0560
+2021-01-22 16:07:33,247 --- INFO: eta: 0:57:08  epoch [30/60]  loss: 4.5284 (12.3759)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.8342 (5.1367)  cmpm_loss: 2.6237 (7.2391)  mh_loss: 0.0000 (0.0000)  time: 0.2087 (0.2148)  data: 0.0098 (0.0159)  lr: 0.000110
+2021-01-22 16:07:33,247 --- INFO: Testing
+2021-01-22 16:07:49,377 --- INFO: cmc1_t2i = 0.4252, cmc5_t2i = 0.6636, cmc10_t2i = 0.7620
+2021-01-22 16:07:49,377 --- INFO: cmc1_i2t = 0.5244, cmc5_i2t = 0.8077, cmc10_i2t = 0.8871
+2021-01-22 16:07:49,378 --- INFO: r1 = 0.7128, ap50 = 0.0588
+2021-01-22 16:09:11,867 --- INFO: eta: 1:47:38  epoch [21/60]  loss: 4.7997 (9.4941)  instance_loss: 1.4537 (4.6833)  global_align_loss: 3.2348 (4.8108)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3029 (0.3113)  data: 0.0098 (0.0172)  lr: 0.000110
+2021-01-22 16:09:40,197 --- INFO: eta: 0:55:25  epoch [31/60]  loss: 5.3114 (12.1148)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.9313 (5.0209)  cmpm_loss: 3.3619 (7.0938)  mh_loss: 0.0000 (0.0000)  time: 0.2078 (0.2156)  data: 0.0098 (0.0167)  lr: 0.000110
+2021-01-22 16:11:31,738 --- INFO: eta: 0:53:28  epoch [32/60]  loss: 4.0915 (11.8633)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.6163 (4.9095)  cmpm_loss: 2.5667 (6.9538)  mh_loss: 0.0000 (0.0000)  time: 0.2072 (0.2154)  data: 0.0094 (0.0166)  lr: 0.000110
+2021-01-22 16:11:54,128 --- INFO: eta: 1:44:47  epoch [22/60]  loss: 4.5081 (9.2546)  instance_loss: 1.3054 (4.5219)  global_align_loss: 3.1491 (4.7327)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3011 (0.3110)  data: 0.0099 (0.0170)  lr: 0.000110
+2021-01-22 16:13:24,696 --- INFO: eta: 0:51:32  epoch [33/60]  loss: 4.2162 (11.6274)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.7070 (4.8043)  cmpm_loss: 2.6259 (6.8231)  mh_loss: 0.0000 (0.0000)  time: 0.2090 (0.2153)  data: 0.0103 (0.0165)  lr: 0.000110
+2021-01-22 16:14:37,223 --- INFO: eta: 1:41:57  epoch [23/60]  loss: 4.3305 (9.0312)  instance_loss: 1.3105 (4.3727)  global_align_loss: 2.8420 (4.6585)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2995 (0.3108)  data: 0.0101 (0.0168)  lr: 0.000110
+2021-01-22 16:15:18,597 --- INFO: eta: 0:49:37  epoch [34/60]  loss: 3.8782 (11.4004)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.5418 (4.7031)  cmpm_loss: 2.2437 (6.6973)  mh_loss: 0.0000 (0.0000)  time: 0.2089 (0.2152)  data: 0.0120 (0.0164)  lr: 0.000110
+2021-01-22 16:17:13,275 --- INFO: eta: 0:47:42  epoch [35/60]  loss: 4.4560 (11.1832)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.5834 (4.6064)  cmpm_loss: 2.5984 (6.5769)  mh_loss: 0.0000 (0.0000)  time: 0.2127 (0.2153)  data: 0.0119 (0.0163)  lr: 0.000110
+2021-01-22 16:17:20,375 --- INFO: eta: 1:39:09  epoch [24/60]  loss: 4.2115 (8.8213)  instance_loss: 1.1775 (4.2338)  global_align_loss: 2.9545 (4.5875)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2997 (0.3106)  data: 0.0093 (0.0166)  lr: 0.000110
+2021-01-22 16:19:07,250 --- INFO: eta: 0:45:48  epoch [36/60]  loss: 3.9409 (10.9766)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.4660 (4.5142)  cmpm_loss: 2.4612 (6.4625)  mh_loss: 0.0000 (0.0000)  time: 0.2118 (0.2152)  data: 0.0111 (0.0163)  lr: 0.000110
+2021-01-22 16:20:02,988 --- INFO: eta: 1:36:20  epoch [25/60]  loss: 4.0915 (8.6244)  instance_loss: 1.2469 (4.1043)  global_align_loss: 2.8971 (4.5200)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3029 (0.3104)  data: 0.0097 (0.0165)  lr: 0.000110
+2021-01-22 16:21:01,394 --- INFO: eta: 0:43:53  epoch [37/60]  loss: 4.1226 (10.7770)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.4810 (4.4255)  cmpm_loss: 2.4561 (6.3516)  mh_loss: 0.0000 (0.0000)  time: 0.2109 (0.2152)  data: 0.0110 (0.0162)  lr: 0.000110
+2021-01-22 16:22:44,878 --- INFO: eta: 1:33:30  epoch [26/60]  loss: 3.7838 (8.4393)  instance_loss: 1.1090 (3.9834)  global_align_loss: 2.7102 (4.4558)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3027 (0.3102)  data: 0.0101 (0.0163)  lr: 0.000110
+2021-01-22 16:22:53,704 --- INFO: eta: 0:41:57  epoch [38/60]  loss: 2.9766 (10.5868)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.3052 (4.3404)  cmpm_loss: 1.6767 (6.2464)  mh_loss: 0.0000 (0.0000)  time: 0.2085 (0.2151)  data: 0.0105 (0.0161)  lr: 0.000110
+2021-01-22 16:24:47,463 --- INFO: eta: 0:40:02  epoch [39/60]  loss: 3.4280 (10.4036)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.3161 (4.2585)  cmpm_loss: 1.9932 (6.1451)  mh_loss: 0.0000 (0.0000)  time: 0.2111 (0.2151)  data: 0.0111 (0.0161)  lr: 0.000110
+2021-01-22 16:25:27,874 --- INFO: eta: 1:30:43  epoch [27/60]  loss: 4.0609 (8.2653)  instance_loss: 1.1321 (3.8703)  global_align_loss: 2.7864 (4.3950)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3033 (0.3101)  data: 0.0103 (0.0161)  lr: 0.000110
+2021-01-22 16:26:41,170 --- INFO: eta: 0:38:08  epoch [40/60]  loss: 3.6261 (10.2254)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 1.3363 (4.1789)  cmpm_loss: 2.3047 (6.0464)  mh_loss: 0.0000 (0.0000)  time: 0.2120 (0.2150)  data: 0.0118 (0.0160)  lr: 0.000110
+2021-01-22 16:26:41,171 --- INFO: Testing
+2021-01-22 16:26:57,458 --- INFO: cmc1_t2i = 0.4114, cmc5_t2i = 0.6509, cmc10_t2i = 0.7521
+2021-01-22 16:26:57,458 --- INFO: cmc1_i2t = 0.5296, cmc5_i2t = 0.8042, cmc10_i2t = 0.8826
+2021-01-22 16:26:57,458 --- INFO: r1 = 0.7215, ap50 = 0.0586
+2021-01-22 16:28:12,614 --- INFO: eta: 1:27:58  epoch [28/60]  loss: 3.8275 (8.1004)  instance_loss: 1.0578 (3.7641)  global_align_loss: 2.7434 (4.3363)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3008 (0.3100)  data: 0.0097 (0.0160)  lr: 0.000110
+2021-01-22 16:28:48,608 --- INFO: eta: 0:36:19  epoch [41/60]  loss: 1.8837 (10.0340)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.6070 (4.0951)  cmpm_loss: 1.1982 (5.9389)  mh_loss: 0.0000 (0.0000)  time: 0.2078 (0.2156)  data: 0.0097 (0.0166)  lr: 0.000011
+2021-01-22 16:30:40,568 --- INFO: eta: 0:34:23  epoch [42/60]  loss: 1.9982 (9.8406)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.5581 (4.0120)  cmpm_loss: 1.3320 (5.8286)  mh_loss: 0.0000 (0.0000)  time: 0.2096 (0.2155)  data: 0.0103 (0.0165)  lr: 0.000011
+2021-01-22 16:30:58,476 --- INFO: eta: 1:25:14  epoch [29/60]  loss: 3.6507 (7.9440)  instance_loss: 1.0321 (3.6636)  global_align_loss: 2.6473 (4.2804)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3068 (0.3101)  data: 0.0111 (0.0160)  lr: 0.000110
+2021-01-22 16:32:34,688 --- INFO: eta: 0:32:28  epoch [43/60]  loss: 1.2176 (9.6533)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.4725 (3.9314)  cmpm_loss: 0.7629 (5.7219)  mh_loss: 0.0000 (0.0000)  time: 0.2099 (0.2155)  data: 0.0113 (0.0165)  lr: 0.000011
+2021-01-22 16:33:41,039 --- INFO: eta: 1:22:26  epoch [30/60]  loss: 3.5848 (7.7952)  instance_loss: 0.9757 (3.5691)  global_align_loss: 2.6601 (4.2261)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3009 (0.3099)  data: 0.0099 (0.0159)  lr: 0.000110
+2021-01-22 16:33:41,039 --- INFO: Testing
+2021-01-22 16:33:56,957 --- INFO: cmc1_t2i = 0.4478, cmc5_t2i = 0.6773, cmc10_t2i = 0.7669
+2021-01-22 16:33:56,958 --- INFO: cmc1_i2t = 0.6171, cmc5_i2t = 0.8526, cmc10_i2t = 0.9141
+2021-01-22 16:33:56,958 --- INFO: r1 = 0.7655, ap50 = 0.0590
+2021-01-22 16:34:29,390 --- INFO: eta: 0:30:34  epoch [44/60]  loss: 1.7819 (9.4707)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.4403 (3.8537)  cmpm_loss: 1.1191 (5.6169)  mh_loss: 0.0000 (0.0000)  time: 0.2116 (0.2155)  data: 0.0122 (0.0164)  lr: 0.000011
+2021-01-22 16:36:24,088 --- INFO: eta: 0:28:39  epoch [45/60]  loss: 1.2586 (9.2928)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.4702 (3.7784)  cmpm_loss: 0.8174 (5.5144)  mh_loss: 0.0000 (0.0000)  time: 0.2124 (0.2155)  data: 0.0119 (0.0164)  lr: 0.000011
+2021-01-22 16:36:39,127 --- INFO: eta: 1:19:54  epoch [31/60]  loss: 3.6085 (7.6540)  instance_loss: 0.9443 (3.4797)  global_align_loss: 2.6642 (4.1743)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3009 (0.3107)  data: 0.0093 (0.0167)  lr: 0.000110
+2021-01-22 16:38:15,897 --- INFO: eta: 0:26:44  epoch [46/60]  loss: 1.4825 (9.1218)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.4432 (3.7059)  cmpm_loss: 1.0639 (5.4159)  mh_loss: 0.0000 (0.0000)  time: 0.2067 (0.2154)  data: 0.0098 (0.0163)  lr: 0.000011
+2021-01-22 16:39:21,831 --- INFO: eta: 1:17:06  epoch [32/60]  loss: 3.6156 (7.5206)  instance_loss: 0.9403 (3.3955)  global_align_loss: 2.6258 (4.1251)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3022 (0.3106)  data: 0.0094 (0.0166)  lr: 0.000110
+2021-01-22 16:40:07,256 --- INFO: eta: 0:24:48  epoch [47/60]  loss: 1.2734 (8.9563)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3597 (3.6360)  cmpm_loss: 0.7740 (5.3203)  mh_loss: 0.0000 (0.0000)  time: 0.2078 (0.2153)  data: 0.0101 (0.0162)  lr: 0.000011
+2021-01-22 16:42:00,026 --- INFO: eta: 0:22:53  epoch [48/60]  loss: 0.9853 (8.7961)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3106 (3.5686)  cmpm_loss: 0.6943 (5.2275)  mh_loss: 0.0000 (0.0000)  time: 0.2096 (0.2152)  data: 0.0099 (0.0161)  lr: 0.000011
+2021-01-22 16:42:05,965 --- INFO: eta: 1:14:20  epoch [33/60]  loss: 3.3444 (7.3924)  instance_loss: 0.8262 (3.3153)  global_align_loss: 2.4526 (4.0771)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3022 (0.3105)  data: 0.0097 (0.0165)  lr: 0.000110
+2021-01-22 16:43:54,513 --- INFO: eta: 0:20:59  epoch [49/60]  loss: 0.9944 (8.6427)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.4030 (3.5037)  cmpm_loss: 0.6114 (5.1390)  mh_loss: 0.0000 (0.0000)  time: 0.2104 (0.2152)  data: 0.0114 (0.0161)  lr: 0.000011
+2021-01-22 16:44:50,680 --- INFO: eta: 1:11:34  epoch [34/60]  loss: 3.3609 (7.2705)  instance_loss: 0.8292 (3.2394)  global_align_loss: 2.5316 (4.0311)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3050 (0.3105)  data: 0.0110 (0.0164)  lr: 0.000110
+2021-01-22 16:45:49,165 --- INFO: eta: 0:19:04  epoch [50/60]  loss: 1.0953 (8.4938)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3615 (3.4408)  cmpm_loss: 0.8266 (5.0530)  mh_loss: 0.0000 (0.0000)  time: 0.2105 (0.2152)  data: 0.0119 (0.0161)  lr: 0.000011
+2021-01-22 16:45:49,165 --- INFO: Testing
+2021-01-22 16:46:05,725 --- INFO: cmc1_t2i = 0.5088, cmc5_t2i = 0.7437, cmc10_t2i = 0.8255
+2021-01-22 16:46:05,725 --- INFO: cmc1_i2t = 0.6357, cmc5_i2t = 0.8621, cmc10_i2t = 0.9268
+2021-01-22 16:46:05,725 --- INFO: r1 = 0.8120, ap50 = 0.0603
+2021-01-22 16:47:33,322 --- INFO: eta: 1:08:47  epoch [35/60]  loss: 3.3372 (7.1536)  instance_loss: 0.8971 (3.1670)  global_align_loss: 2.4798 (3.9866)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2997 (0.3104)  data: 0.0089 (0.0163)  lr: 0.000110
+2021-01-22 16:47:56,890 --- INFO: eta: 0:17:12  epoch [51/60]  loss: 0.8385 (8.3497)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3352 (3.3801)  cmpm_loss: 0.5468 (4.9696)  mh_loss: 0.0000 (0.0000)  time: 0.2066 (0.2157)  data: 0.0095 (0.0166)  lr: 0.000001
+2021-01-22 16:49:50,590 --- INFO: eta: 0:15:17  epoch [52/60]  loss: 1.0701 (8.2103)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3064 (3.3215)  cmpm_loss: 0.7804 (4.8887)  mh_loss: 0.0000 (0.0000)  time: 0.2113 (0.2156)  data: 0.0099 (0.0165)  lr: 0.000001
+2021-01-22 16:50:14,925 --- INFO: eta: 1:06:00  epoch [36/60]  loss: 2.5632 (7.0298)  instance_loss: 0.4382 (3.0926)  global_align_loss: 2.1250 (3.9371)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3012 (0.3102)  data: 0.0098 (0.0161)  lr: 0.000011
+2021-01-22 16:51:43,165 --- INFO: eta: 0:13:22  epoch [53/60]  loss: 1.1474 (8.0765)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3475 (3.2651)  cmpm_loss: 0.7960 (4.8114)  mh_loss: 0.0000 (0.0000)  time: 0.2075 (0.2156)  data: 0.0099 (0.0164)  lr: 0.000001
+2021-01-22 16:52:59,954 --- INFO: eta: 1:03:15  epoch [37/60]  loss: 2.4914 (6.9074)  instance_loss: 0.4293 (3.0203)  global_align_loss: 2.0258 (3.8871)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3074 (0.3102)  data: 0.0117 (0.0161)  lr: 0.000011
+2021-01-22 16:53:35,766 --- INFO: eta: 0:11:27  epoch [54/60]  loss: 1.3047 (7.9480)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3064 (3.2109)  cmpm_loss: 0.8337 (4.7371)  mh_loss: 0.0000 (0.0000)  time: 0.2072 (0.2155)  data: 0.0101 (0.0164)  lr: 0.000001
+2021-01-22 16:55:27,570 --- INFO: eta: 0:09:32  epoch [55/60]  loss: 0.8924 (7.8231)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3345 (3.1587)  cmpm_loss: 0.6596 (4.6644)  mh_loss: 0.0000 (0.0000)  time: 0.2067 (0.2154)  data: 0.0096 (0.0163)  lr: 0.000001
+2021-01-22 16:55:45,246 --- INFO: eta: 1:00:30  epoch [38/60]  loss: 2.3588 (6.7889)  instance_loss: 0.3809 (2.9509)  global_align_loss: 1.9733 (3.8380)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3049 (0.3102)  data: 0.0105 (0.0160)  lr: 0.000011
+2021-01-22 16:57:21,256 --- INFO: eta: 0:07:38  epoch [56/60]  loss: 1.1320 (7.7033)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.2857 (3.1082)  cmpm_loss: 0.7638 (4.5950)  mh_loss: 0.0000 (0.0000)  time: 0.2089 (0.2154)  data: 0.0103 (0.0162)  lr: 0.000001
+2021-01-22 16:58:28,924 --- INFO: eta: 0:57:44  epoch [39/60]  loss: 2.2427 (6.6749)  instance_loss: 0.3446 (2.8845)  global_align_loss: 1.8971 (3.7903)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3048 (0.3101)  data: 0.0117 (0.0160)  lr: 0.000011
+2021-01-22 16:59:14,933 --- INFO: eta: 0:05:43  epoch [57/60]  loss: 1.2566 (7.5874)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3581 (3.0595)  cmpm_loss: 0.8420 (4.5279)  mh_loss: 0.0000 (0.0000)  time: 0.2116 (0.2153)  data: 0.0111 (0.0162)  lr: 0.000001
+2021-01-22 17:01:08,666 --- INFO: eta: 0:03:49  epoch [58/60]  loss: 1.0452 (7.4743)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.3110 (3.0123)  cmpm_loss: 0.6660 (4.4620)  mh_loss: 0.0000 (0.0000)  time: 0.2117 (0.2153)  data: 0.0107 (0.0162)  lr: 0.000001
+2021-01-22 17:01:10,779 --- INFO: eta: 0:54:58  epoch [40/60]  loss: 2.3422 (6.5644)  instance_loss: 0.3910 (2.8209)  global_align_loss: 1.9096 (3.7435)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3004 (0.3100)  data: 0.0096 (0.0159)  lr: 0.000011
+2021-01-22 17:01:10,780 --- INFO: Testing
+2021-01-22 17:01:27,290 --- INFO: cmc1_t2i = 0.5333, cmc5_t2i = 0.7459, cmc10_t2i = 0.8276
+2021-01-22 17:01:27,291 --- INFO: cmc1_i2t = 0.6718, cmc5_i2t = 0.8855, cmc10_i2t = 0.9362
+2021-01-22 17:01:27,291 --- INFO: r1 = 0.8282, ap50 = 0.0608
+2021-01-22 17:03:02,209 --- INFO: eta: 0:01:54  epoch [59/60]  loss: 0.8412 (7.3657)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.2507 (2.9667)  cmpm_loss: 0.6223 (4.3990)  mh_loss: 0.0000 (0.0000)  time: 0.2086 (0.2153)  data: 0.0104 (0.0161)  lr: 0.000001
+2021-01-22 17:04:09,570 --- INFO: eta: 0:52:19  epoch [41/60]  loss: 2.2081 (6.4586)  instance_loss: 0.3649 (2.7601)  global_align_loss: 1.8318 (3.6985)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3002 (0.3106)  data: 0.0096 (0.0165)  lr: 0.000011
+2021-01-22 17:04:56,277 --- INFO: eta: 0:00:00  epoch [60/60]  loss: 1.0536 (7.2600)  instance_loss: 0.0000 (0.0000)  global_align_loss: 0.0000 (0.0000)  cmpc_loss: 0.2852 (2.9224)  cmpm_loss: 0.8258 (4.3376)  mh_loss: 0.0000 (0.0000)  time: 0.2106 (0.2153)  data: 0.0117 (0.0161)  lr: 0.000001
+2021-01-22 17:04:56,278 --- INFO: Testing
+2021-01-22 17:05:11,803 --- INFO: cmc1_t2i = 0.5145, cmc5_t2i = 0.7454, cmc10_t2i = 0.8299
+2021-01-22 17:05:11,804 --- INFO: cmc1_i2t = 0.6318, cmc5_i2t = 0.8624, cmc10_i2t = 0.9255
+2021-01-22 17:05:11,804 --- INFO: r1 = 0.8103, ap50 = 0.0604
+2021-01-22 17:05:11,804 --- INFO: Total training time: 1:54:46.791215 (12.9451 s / it)
+2021-01-22 17:05:11,804 --- INFO: Outputdir_path: model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm
+2021-01-22 17:06:54,126 --- INFO: eta: 0:49:34  epoch [42/60]  loss: 2.1709 (6.3570)  instance_loss: 0.2808 (2.7018)  global_align_loss: 1.9396 (3.6552)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3064 (0.3106)  data: 0.0104 (0.0165)  lr: 0.000011
+2021-01-22 17:09:40,038 --- INFO: eta: 0:46:49  epoch [43/60]  loss: 2.0696 (6.2592)  instance_loss: 0.2831 (2.6459)  global_align_loss: 1.7799 (3.6132)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3099 (0.3106)  data: 0.0123 (0.0164)  lr: 0.000011
+2021-01-22 17:12:26,180 --- INFO: eta: 0:44:04  epoch [44/60]  loss: 2.0905 (6.1652)  instance_loss: 0.2875 (2.5924)  global_align_loss: 1.7938 (3.5728)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3082 (0.3107)  data: 0.0114 (0.0164)  lr: 0.000011
+2021-01-22 17:15:11,176 --- INFO: eta: 0:41:18  epoch [45/60]  loss: 2.0752 (6.0752)  instance_loss: 0.2872 (2.5412)  global_align_loss: 1.7632 (3.5340)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3046 (0.3106)  data: 0.0117 (0.0164)  lr: 0.000011
+2021-01-22 17:17:55,220 --- INFO: eta: 0:38:33  epoch [46/60]  loss: 2.0482 (5.9878)  instance_loss: 0.2728 (2.4920)  global_align_loss: 1.6933 (3.4958)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3041 (0.3106)  data: 0.0118 (0.0163)  lr: 0.000011
+2021-01-22 17:20:39,780 --- INFO: eta: 0:35:47  epoch [47/60]  loss: 2.0476 (5.9040)  instance_loss: 0.2781 (2.4448)  global_align_loss: 1.8257 (3.4592)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3028 (0.3106)  data: 0.0111 (0.0163)  lr: 0.000011
+2021-01-22 17:23:22,110 --- INFO: eta: 0:33:01  epoch [48/60]  loss: 2.0997 (5.8231)  instance_loss: 0.2664 (2.3995)  global_align_loss: 1.7754 (3.4237)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2991 (0.3105)  data: 0.0097 (0.0162)  lr: 0.000011
+2021-01-22 17:26:04,483 --- INFO: eta: 0:30:16  epoch [49/60]  loss: 1.9516 (5.7451)  instance_loss: 0.2796 (2.3559)  global_align_loss: 1.7012 (3.3891)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3005 (0.3103)  data: 0.0097 (0.0161)  lr: 0.000011
+2021-01-22 17:28:48,444 --- INFO: eta: 0:27:30  epoch [50/60]  loss: 1.9628 (5.6696)  instance_loss: 0.2491 (2.3140)  global_align_loss: 1.6763 (3.3556)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3026 (0.3103)  data: 0.0106 (0.0160)  lr: 0.000011
+2021-01-22 17:28:48,444 --- INFO: Testing
+2021-01-22 17:29:05,718 --- INFO: cmc1_t2i = 0.5299, cmc5_t2i = 0.7406, cmc10_t2i = 0.8245
+2021-01-22 17:29:05,718 --- INFO: cmc1_i2t = 0.6656, cmc5_i2t = 0.8796, cmc10_i2t = 0.9262
+2021-01-22 17:29:05,718 --- INFO: r1 = 0.8224, ap50 = 0.0605
+2021-01-22 17:31:47,267 --- INFO: eta: 0:24:48  epoch [51/60]  loss: 1.9523 (5.5966)  instance_loss: 0.2402 (2.2734)  global_align_loss: 1.7100 (3.3232)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2988 (0.3108)  data: 0.0099 (0.0166)  lr: 0.000001
+2021-01-22 17:34:28,068 --- INFO: eta: 0:22:02  epoch [52/60]  loss: 1.8846 (5.5261)  instance_loss: 0.2427 (2.2343)  global_align_loss: 1.5924 (3.2917)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3005 (0.3106)  data: 0.0096 (0.0165)  lr: 0.000001
+2021-01-22 17:37:10,840 --- INFO: eta: 0:19:16  epoch [53/60]  loss: 1.7871 (5.4581)  instance_loss: 0.2186 (2.1967)  global_align_loss: 1.5885 (3.2614)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3005 (0.3106)  data: 0.0094 (0.0164)  lr: 0.000001
+2021-01-22 17:39:56,634 --- INFO: eta: 0:16:31  epoch [54/60]  loss: 2.0034 (5.3927)  instance_loss: 0.2511 (2.1605)  global_align_loss: 1.7119 (3.2322)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3069 (0.3106)  data: 0.0107 (0.0164)  lr: 0.000001
+2021-01-22 17:42:39,433 --- INFO: eta: 0:13:45  epoch [55/60]  loss: 1.9034 (5.3292)  instance_loss: 0.2396 (2.1256)  global_align_loss: 1.6244 (3.2036)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.2997 (0.3105)  data: 0.0095 (0.0163)  lr: 0.000001
+2021-01-22 17:45:23,396 --- INFO: eta: 0:11:00  epoch [56/60]  loss: 1.9550 (5.2681)  instance_loss: 0.2437 (2.0919)  global_align_loss: 1.6856 (3.1762)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3037 (0.3105)  data: 0.0100 (0.0163)  lr: 0.000001
+2021-01-22 17:48:07,068 --- INFO: eta: 0:08:15  epoch [57/60]  loss: 1.8420 (5.2090)  instance_loss: 0.2139 (2.0594)  global_align_loss: 1.6111 (3.1496)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3051 (0.3104)  data: 0.0110 (0.0162)  lr: 0.000001
+2021-01-22 17:50:51,740 --- INFO: eta: 0:05:30  epoch [58/60]  loss: 1.9169 (5.1519)  instance_loss: 0.2432 (2.0280)  global_align_loss: 1.6545 (3.1239)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3062 (0.3104)  data: 0.0120 (0.0162)  lr: 0.000001
+2021-01-22 17:53:35,625 --- INFO: eta: 0:02:45  epoch [59/60]  loss: 1.7642 (5.0966)  instance_loss: 0.1986 (1.9976)  global_align_loss: 1.5739 (3.0989)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3045 (0.3104)  data: 0.0099 (0.0161)  lr: 0.000001
+2021-01-22 17:56:19,112 --- INFO: eta: 0:00:00  epoch [60/60]  loss: 1.7846 (5.0432)  instance_loss: 0.2023 (1.9683)  global_align_loss: 1.5439 (3.0749)  cmpc_loss: 0.0000 (0.0000)  cmpm_loss: 0.0000 (0.0000)  mh_loss: 0.0000 (0.0000)  time: 0.3035 (0.3103)  data: 0.0101 (0.0161)  lr: 0.000001
+2021-01-22 17:56:19,112 --- INFO: Testing
+2021-01-22 17:56:35,032 --- INFO: cmc1_t2i = 0.5335, cmc5_t2i = 0.7428, cmc10_t2i = 0.8250
+2021-01-22 17:56:35,032 --- INFO: cmc1_i2t = 0.6679, cmc5_i2t = 0.8822, cmc10_i2t = 0.9294
+2021-01-22 17:56:35,033 --- INFO: r1 = 0.8302, ap50 = 0.0606
+2021-01-22 17:56:35,033 --- INFO: Total training time: 2:45:20.889751 (18.6483 s / it)
+2021-01-22 17:56:35,033 --- INFO: Outputdir_path: model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm

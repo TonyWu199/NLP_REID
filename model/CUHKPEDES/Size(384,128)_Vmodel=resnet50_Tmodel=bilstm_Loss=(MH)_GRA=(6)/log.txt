@@ -1,0 +1,11 @@
+2021-01-27 10:33:38,110 --- INFO: Output will be saved in "model/CUHKPEDES/Size(384,128)_Vmodel=resnet50_Tmodel=bilstm_Loss=(MH)_GRA=(6)"
+2021-01-27 10:33:38,110 --- INFO: Creating Dataloader...
+2021-01-27 10:33:38,660 --- INFO: Creating Network...
+2021-01-27 10:33:43,447 --- INFO: Total parameters； 67.61M
+2021-01-27 10:33:43,447 --- INFO: Creating Solver...
+2021-01-27 10:37:21,693 --- INFO: eta: 3:34:30  epoch [1/60]  loss: 25.7663 (25.8988)  mh_loss: 25.7663 (25.8988)  time: 0.4081 (0.4100)  data: 0.0101 (0.0115)  lr: 0.000010
+2021-01-27 10:37:21,694 --- INFO: Testing
+2021-01-27 10:37:42,547 --- INFO: cmc1_t2i = 0.0008, cmc5_t2i = 0.0047, cmc10_t2i = 0.0104
+2021-01-27 10:37:42,547 --- INFO: cmc1_i2t = 0.0010, cmc5_i2t = 0.0075, cmc10_i2t = 0.0120
+2021-01-27 10:37:42,547 --- INFO: r1 = 0.0013, ap50 = 0.0010
+2021-01-27 10:41:21,143 --- INFO: eta: 3:41:10  epoch [2/60]  loss: 25.7058 (25.8291)  mh_loss: 25.7058 (25.8291)  time: 0.4082 (0.4301)  data: 0.0094 (0.0310)  lr: 0.000028
