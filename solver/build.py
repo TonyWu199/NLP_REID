@@ -35,7 +35,7 @@ from .lr_scheduler import LRSchedulerWithWarmup
 #         power=cfg.SOLVER.POWER
 #     )
 
-def make_optimizer(model, cfg):
+def make_optimizer(model, cfg, aug_model=None):
 
     '''
     Type-1
@@ -61,6 +61,10 @@ def make_optimizer(model, cfg):
     backbone_params = cnn_params + lstm_params
     other_params = filter(lambda p: id(p) not in backbone_params, model.parameters())
     other_params = list(other_params)
+    
+    if aug_model != None:
+        aug_params = list(aug_model.parameters())
+        other_params += aug_params
 
     param_groups = [{'params': other_params},
     {'params': model.visual_model.parameters(), 'weight_decay': cfg.SOLVER.WEIGHT_DECAY, 'lr':cfg.SOLVER.BASE_LR},
@@ -72,7 +76,7 @@ def make_optimizer(model, cfg):
     )
 
     '''
-    Type-3
+    Type-3[]
     '''
     # add 2021年1月20日 10:45:55
     # cnn_params = list(map(id, model.visual_model.parameters()))

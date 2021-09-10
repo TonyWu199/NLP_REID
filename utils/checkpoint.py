@@ -5,7 +5,6 @@ import torch
 
 from collections import OrderedDict
 
-
 class Checkpointer(object):
     def __init__(
         self,

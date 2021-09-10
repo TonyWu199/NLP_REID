@@ -1,8 +1,10 @@
 import sys,os
+from nltk.util import pr
 sys.path.append('..')
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from warnings import warn
 
 from .loss import make_loss_evaluator
 from utils.utils import weights_init_kaiming
@@ -12,40 +14,44 @@ class SimpleHead(nn.Module):
                  visual_size,
                  textual_size,
                  cfg,
+                 classnum,
                  ):
         super(SimpleHead, self).__init__()
         self.cfg = cfg
         self.embed_size = self.cfg.MODEL.EMBEDDING_SIZE
-
+        self.dropout = 0.2
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
 
-        self.visual_embed_layer = nn.Linear(visual_size, self.embed_size)
-        self.textual_embed_layer = nn.Linear(textual_size, self.embed_size)
+        self.visual_block = nn.Sequential(
+            nn.Linear(visual_size, self.embed_size, False),
+            nn.BatchNorm1d(self.embed_size),
+            nn.ReLU(),
+            # nn.Linear(self.embed_size, self.embed_size, False),
+            # nn.BatchNorm1d(self.embed_size),
+            # nn.ReLU(),
+            # nn.Dropout(p=self.dropout)
+        )
+        self.visual_block[1].requires_grad_(False)
+        self.visual_block[1].apply(weights_init_kaiming)
+        # self.visual_block[4].requires_grad_(False)
+        # self.visual_block[4].apply(weights_init_kaiming)
 
-        # self.visual_local_embed_layer = nn.Linear(visual_size, self.embed_size)
-        self.visual_local_embed_list = nn.ModuleList([nn.Linear(visual_size, self.embed_size) for i in range(cfg.MODEL.VISUAL_MODEL.NUM_STRIPES)])
-        # self.textual_local_embed_layer = nn.Linear(textual_size, self.embed_size)
+        self.textual_block = nn.Sequential(
+            nn.Linear(textual_size, self.embed_size, False),
+            nn.BatchNorm1d(self.embed_size),
+            nn.ReLU(),
+            # nn.Linear(self.embed_size, self.embed_size, False),
+            # nn.BatchNorm1d(self.embed_size),
+            # nn.ReLU(),
+            # nn.Dropout(p=self.dropout)
+        )
+        self.textual_block[1].requires_grad_(False)
+        self.textual_block[1].apply(weights_init_kaiming)
+        # self.textual_block[4].requires_grad_(False)
+        # self.textual_block[4].apply(weights_init_kaiming)
 
-        if cfg.MODEL.BN_LAYER:
-            #! global
-            self.bottelneck_global_visual = nn.BatchNorm1d(self.embed_size)
-            self.bottelneck_global_visual.bias.requires_grad_(False)
-            self.bottelneck_global_visual.apply(weights_init_kaiming)
-            self.bottelneck_global_textual = nn.BatchNorm1d(self.embed_size)
-            self.bottelneck_global_textual.bias.requires_grad_(False)
-            self.bottelneck_global_textual.apply(weights_init_kaiming)
 
-            #! local
-            # self.bottelneck_local_visual = nn.BatchNorm1d(self.cfg.MODEL.VISUAL_MODEL.NUM_STRIPES)
-            # self.bottelneck_local_visual.bias.requires_grad_(False)
-            # self.bottelneck_local_visual.apply(weights_init_kaiming)
-
-            # self.bottelneck_local_textual = nn.BatchNorm1d(self.cfg.MODEL.TEXTUAL_MODEL.MAX_LENGTH)
-            # self.bottelneck_local_textual.bias.requires_grad_(False)
-            # self.bottelneck_local_textual.apply(weights_init_kaiming)
-            self.bottelneck_local_textual = nn.LayerNorm(self.embed_size)
-
-        self.loss_evaluator = make_loss_evaluator(self.cfg)
+        self.loss_evaluator = make_loss_evaluator(self.cfg, classnum)
         self._init_weight()
 
     def _init_weight(self):
@@ -67,59 +73,81 @@ class SimpleHead(nn.Module):
                 labels,
                 local_visual_feat=None,
                 local_textual_feat=None,
-                text_length=None):
+                text_length=None,
+                txt2_embed=None, aug_model=None):
         # resnet 模型
         # if 'resnet' in self.cfg.MODEL.VISUAL.MODEL_NAME:
         #! global Embedding
         batch_size = global_visual_feature.size(0)
         global_visual_feature = self.avgpool(global_visual_feature)
-
         global_visual_embed = global_visual_feature.view(batch_size, -1)
         global_textual_embed = global_textual_feature.view(batch_size, -1)
-        
-        global_visual_embed = self.visual_embed_layer(global_visual_embed)
-        global_textual_embed = self.textual_embed_layer(global_textual_embed)
+
+        # global_visual_embed = self.visual_embed_layer(global_visual_embed)
+        # global_textual_embed = self.textual_embed_layer(global_textual_embed)
+
+        global_visual_embed = self.visual_block(global_visual_embed)
+        global_textual_embed = self.textual_block(global_textual_embed)
+      
 
         #! local Embedding
         local_visual_embed = None
         local_textual_embed = None
-        if local_visual_feat != None or local_textual_feat != None:
-            local_visual_embed_list = []
-            for i in range(len(self.visual_local_embed_list)):
-                # --> [bs, visual_size] -> [bs, embed_size]
-                local_visual_embed_list.append(self.visual_local_embed_list[i](local_visual_feat[i]))
-            local_visual_embed = torch.stack(local_visual_embed_list)
-            local_visual_embed = local_visual_embed.permute(1,0,2)
+        # if local_visual_feat != None or local_textual_feat != None:
+        #     local_visual_embed_list = []
+        #     for i in range(len(self.visual_local_embed_list)):
+        #         # --> [bs, visual_size] -> [bs, embed_size]
+        #         local_visual_embed_list.append(self.visual_local_embed_list[i](local_visual_feat[i]))
+        #     local_visual_embed = torch.stack(local_visual_embed_list)
+        #     local_visual_embed = local_visual_embed.permute(1,0,2)
+            
+        #     local_textual_embed = local_textual_feat
+            # local_visual_feat = self.avgpool(local_visual_feat)
+            # local_visual_embed = local_visual_feat.view(batch_size, -1)
+            # local_visual_embed = self.visual_embed_layer(local_visual_embed)
+            # local_visual_embed = self.bottelneck_global_visual(local_visual_embed)
 
-            # ! 所有word embedding共用一个Linear层是不合理的，会导致Loss无法下降，恒定在25.600
-            # ! 当word为1时，也会出现类似的问题。
             # local_textual_feat_view = local_textual_feat.view(local_textual_feat.size(0)*local_textual_feat.size(1), -1)
             # local_textual_embed = self.textual_local_embed_layer(local_textual_feat_view)
 
+            # local_textual_embed = local_textual_feat.view(batch_size, -1)
+            # local_textual_embed = self.textual_embed_layer(local_textual_embed)
+            # local_textual_embed = self.bottelneck_global_textual(local_textual_embed)
 
-        if self.cfg.MODEL.BN_LAYER:
-            #! global BN
-            global_visual_embed = self.bottelneck_global_visual(global_visual_embed)
-            global_textual_embed = self.bottelneck_global_textual(global_textual_embed)
+        # if local_visual_embed == None or local_textual_embed == None:
+        #     warn('local feature is None!')
+
+        # if self.cfg.MODEL.BN_LAYER:
+        #     #! global BN
+        #     global_visual_embed = self.bottelneck_global_visual(global_visual_embed)
+        #     global_textual_embed = self.bottelneck_global_textual(global_textual_embed)
 
             # #! local BN
             # if local_visual_feat != None or local_textual_feat != None:
             #     local_textual_embed = self.bottelneck_local_textual(local_textual_embed)
             #     local_visual_embed = self.bottelneck_local_visual(local_visual_embed)
             #     local_textual_embed = self.bottelneck_local_textual(local_textual_embed)
- 
 
-        if self.training:
-            losses, precs = self.loss_evaluator(
-                global_visual_embed, global_textual_embed, 
-                labels,
-                local_visual_embed, local_textual_embed, text_length
-            )
-            return None, losses, precs
+        # global_visual_embed = self.visual_dropout(global_visual_embed)
+        # global_textual_embed = self.textual_dropout(global_textual_embed)
 
         outputs = list()
         outputs.append(global_visual_embed)
         outputs.append(global_textual_embed)
+
+        # feature normalization
+        if self.training:
+            losses, precs = self.loss_evaluator(
+                global_visual_embed, global_textual_embed, 
+                labels,
+                local_visual_embed, local_textual_embed, text_length,
+                txt2_embed, aug_model
+            )
+            return outputs, losses, precs
+
+        # outputs = list()
+        # outputs.append(local_visual_embed)
+        # outputs.append(local_textual_embed)  
         return outputs, None
 
         # PCB 分块
@@ -152,9 +180,11 @@ class SimpleHead(nn.Module):
 
 def build_embed(visual_out_channels,
                 textual_out_channels,
-                cfg
+                cfg,
+                classnum
             ):
 
     return SimpleHead(visual_out_channels,
                       textual_out_channels,
-                      cfg)
+                      cfg,
+                      classnum)

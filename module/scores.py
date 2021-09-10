@@ -2,6 +2,7 @@ from typing import ContextManager
 from warnings import simplefilter
 import torch
 import torch.nn as nn
+from tqdm import tqdm
 
 def l2norm(X, dim, eps=1e-8):
     """L2-normalize columns of X
@@ -59,12 +60,20 @@ def func_attention(query, context, smooth):
 # [bs, stripes, dim]
 # [bs, max_len, dim]
 # [bs, 1]
-def scores_t2i(local_visual_embed, local_textual_embed, text_length):
+def scores_t2i(local_visual_embed, local_textual_embed, text_length, is_tqdm=False):
     scores = []
     n_images = local_visual_embed.size(0)
     n_captions = local_textual_embed.size(0)
     n_regions = local_visual_embed.size(1)
-    for i in range(n_captions):
+
+    is_tqdm = False
+    if is_tqdm:
+        iter_lst = tqdm(range(n_captions))
+    else:
+        iter_lst = range(n_captions)
+
+    # 6148 * 3074 about 10 minutes
+    for i in iter_lst:
         n_word = text_length[i]
         cap_i = local_textual_embed[i, :n_word, :].unsqueeze(0).contiguous()
         # [1, max_len, dim] -> [64, max_len, dim]
@@ -90,18 +99,26 @@ def scores_t2i(local_visual_embed, local_textual_embed, text_length):
 
     return scores
 
-def scores_i2t(local_visual_embed, local_textual_embed, text_length):
+def scores_i2t(local_visual_embed, local_textual_embed, text_length, is_tqdm=False):
     scores = []
     n_images = local_visual_embed.size(0)
     n_captions = local_textual_embed.size(0)
     n_regions = local_visual_embed.size(1)
-    for i in range(n_images):
+
+    is_tqdm = False
+    if is_tqdm:
+        iter_lst = tqdm(range(n_captions))
+    else:
+        iter_lst = range(n_captions)
+
+    for i in iter_lst:
         n_word = text_length[i]
         cap_i = local_textual_embed[i, :n_word, :].unsqueeze(0).contiguous()
         # [1, max_len, dim] -> [64, max_len, dim]
         cap_i_expand = cap_i.repeat(n_images, 1, 1)
 
         # query attention
+        # -> [bs, query_len, dim]
         weiContext, attn = func_attention(local_visual_embed, cap_i_expand, smooth=9.0)
         row_sim = cosine_similarity(local_visual_embed, weiContext, dim=2)
         

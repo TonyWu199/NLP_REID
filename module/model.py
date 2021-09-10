@@ -8,7 +8,7 @@ from .embed import build_embed
 
 class Network(nn.Module):
 
-    def __init__(self, cfg):
+    def __init__(self, cfg, classnum):
         super(Network, self).__init__()
         self.cfg = cfg
         self.visual_model = build_resnet(cfg)
@@ -17,10 +17,11 @@ class Network(nn.Module):
         self.embed_model = build_embed(
             self.visual_model.out_channels,
             self.textual_model.out_channels,
-            cfg
+            cfg,
+            classnum
         )
 
-    def forward(self, images, text, text_length, labels):
+    def forward(self, images, text, text_length, labels, txt2_embed=None, aug_model=None):
         local_visual_feat = None
         local_textual_feat = None
 
@@ -40,14 +41,15 @@ class Network(nn.Module):
             global_textual_feat = self.textual_model(text, text_length)
             
         outputs_embed, losses_embed, prec = self.embed_model(
-            global_visual_feat, global_textual_feat, labels, local_visual_feat, local_textual_feat, text_length)
+            global_visual_feat, global_textual_feat, labels, local_visual_feat, local_textual_feat, text_length,
+            txt2_embed, aug_model)
 
         if self.training:
             losses = {}
             losses.update(losses_embed)
             precs = {}
             precs.update(prec)
-            return losses, precs
+            return outputs_embed, losses, precs
 
         return outputs_embed
 

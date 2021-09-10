@@ -3,7 +3,6 @@ import logging
 import os
 import sys
 
-
 def setup_logger(name, save_dir, filename="log.txt"):
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)

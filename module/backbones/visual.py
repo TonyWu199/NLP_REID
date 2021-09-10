@@ -50,9 +50,8 @@ class ResNet(nn.Module):
             self.layer3_part = self._make_layer(block, 256, layers[2], stride=2)
             self.layer4_part = self._make_layer(block, 512, layers[3], stride=1)
 
-        # # initialization
-        # self._init_weight()
 
+        pretrained = True
         if pretrained:
             self.load_state_dict(
                 remove_fc(model_zoo.load_url(model_arch.url)), strict=False
@@ -97,16 +96,18 @@ class ResNet(nn.Module):
 
 
         if self.num_stripes != 0:
-            # # branch local
+            # branch local
             # x_local = self.layer3_part(x)
             # x_local = self.layer4_part(x_local)
-            
-            stripe_h = int(x_global.size(2) / self.num_stripes)
+            stripe_h = int(x_local.size(2) / self.num_stripes)
             local_feature_list = [] #torch.zeros(x.size(0), self.num_stripes, x.size(-1))
             for i in range(self.num_stripes):
-                local_x = self.avg_pool(x_global[:,:, i*stripe_h: (i+1)*stripe_h, :]).squeeze()
+                local_x = self.avg_pool(x_local[:,:, i*stripe_h: (i+1)*stripe_h, :]).squeeze()
                 local_feature_list.append(local_x)
             return x_global, local_feature_list
+            # return x_global, x_global
+
+
         return x_global
 
     def _init_weight(self):

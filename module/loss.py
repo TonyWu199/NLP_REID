@@ -1,3 +1,4 @@
+from module.utils import CrossEntropyLabelSmooth
 import sys,os
 sys.path.append('..')
 
@@ -13,6 +14,61 @@ from utils.utils import weights_init_kaiming
 
 from .self_attention import get_mask
 from .scores import scores_i2t, scores_t2i
+
+def pdist(e, squared=False, eps=1e-12):
+    e_square = e.pow(2).sum(dim=1)
+    prod = torch.mm(e, e.t())
+    res = (e_square.unsqueeze(1) + e_square.unsqueeze(0) - 2 * prod).clamp(min=eps)
+
+    if not squared:
+        res = res.sqrt()
+
+    res = res.clone()
+    res[range(len(e)), range(len(e))] = 0
+    return res
+	
+class HardDarkRank(nn.Module):
+    def __init__(self, alpha=3, beta=3, permute_len=4):
+        super(HardDarkRank, self).__init__()
+        self.alpha = alpha
+        self.beta = beta
+        self.permute_len = permute_len
+
+    def forward(self, student, teacher):
+        score_teacher = -1 * self.alpha * pdist(teacher, squared=False).pow(self.beta)
+        score_student = -1 * self.alpha * pdist(student, squared=False).pow(self.beta)
+
+        permute_idx = score_teacher.sort(dim=1, descending=True)[1][:, 1:(self.permute_len+1)]
+        ordered_student = torch.gather(score_student, 1, permute_idx)
+
+        log_prob = (ordered_student - torch.stack([torch.logsumexp(ordered_student[:, i:], dim=1) for i in range(permute_idx.size(1))], dim=1)).sum(dim=1)
+        loss = (-1 * log_prob).mean()
+
+        return loss
+
+class KLdivergence(nn.Module):
+    
+    def __init__(self, T):
+        super(KLdivergence,self).__init__()
+        self.softmax = nn.Softmax(dim=1)
+        self.T = T
+        
+    def forward(self, student, teacher):
+         n, c = student.size()
+         assert(student.size() == teacher.size())
+         # Do not BP to teacher model
+         teacher = teacher.detach()
+         
+         student = self.softmax(student/self.T)
+         teacher = self.softmax(teacher/self.T)
+         
+         log_student = student.clamp(min=1e-12).log()
+         log_teacher = teacher.clamp(min=1e-12).log()
+         
+         loss = (log_teacher - log_student) * teacher
+         loss = loss.sum(dim=1, keepdim=False).mean()
+         
+         return loss
 
 def euclidean_dist(x, y):
     """
@@ -31,21 +87,22 @@ def euclidean_dist(x, y):
     return dist
 
 class LossComputation(nn.Module):
-    def __init__(self, cfg, num_classes, feature_size, dropout_prob):
+    def __init__(self, cfg, num_classes, feature_size, dropout_prob=None):
         super(LossComputation, self).__init__()
         self.cfg = cfg
         self.num_classes = num_classes
         self.feature_size = feature_size
         self.dropout_prob = dropout_prob
         self.scale = 28
-        self.margin = 0.2
-        self.max_violation = True
+        self.KL = KLdivergence(T=self.cfg.MODEL.LOSS.T)
+        self.softceloss = CrossEntropyLabelSmooth(num_classes=self.num_classes, epsilon=0.1, use_gpu=True)
+        self.HardDarkRank = HardDarkRank(alpha=3, beta=3, permute_len=63)
 
         if self.cfg.MODEL.LOSS.INSTANCE:
             self.W = Parameter(torch.randn(self.feature_size, self.num_classes), requires_grad=True)
             nn.init.xavier_uniform_(self.W.data, gain=1)
-            # self.share_classifier = nn.Linear(self.feature_size, self.num_classes, True)
-            # self.share_classifier.apply(weights_init_kaiming)
+            self.W_text = Parameter(torch.randn(self.feature_size, self.num_classes), requires_grad=True)
+            nn.init.xavier_uniform_(self.W_text.data, gain=1)
 
         if self.cfg.MODEL.LOSS.CMPC:
             self.W2 = Parameter(torch.randn(self.feature_size, self.num_classes), requires_grad=True)
@@ -53,35 +110,66 @@ class LossComputation(nn.Module):
 
         self.epsilon = 1e-8
 
-    def instance_loss(self, visual_embed, textual_embed, labels):
+    def instance_loss(self, visual_embed, textual_embed, labels, local_visual_embed, local_textual_embed):
+        # visual_embed = local_visual_embed.squeeze(1)
+        # textual_embed = local_textual_embed.squeeze(1)
         visual_norm = F.normalize(visual_embed, p=2, dim=1)
         textual_norm = F.normalize(textual_embed, p=2, dim=1)
 
+        #* instance loss
         W_norm = F.normalize(self.W, p=2, dim=0)
+        W_text_norm = F.normalize(self.W_text, p=2, dim=0)
+        # W1_norm = F.normalize(self.W1, p=2, dim=0)
+
         visual_logits = self.scale * torch.matmul(visual_norm, W_norm)
         textual_logits = self.scale * torch.matmul(textual_norm, W_norm)
+
         # visual_logits = self.share_classifier(visual_norm)
         # textual_logits = self.share_classifier(textual_norm)
 
         criterion = nn.CrossEntropyLoss(reduction='mean')
-        v_loss = criterion(input=visual_logits, target=labels)
-        t_loss = criterion(input=textual_logits, target=labels)
-        
-        # 使用PCB时，全局特征的logits不进行损失计算
-        # if 'PCB' in self.cfg.MODEL.VISUAL_MODEL.NAME:
-        #     # v_loss = torch.tensor(0.0)
-        #     loss = t_loss
-        # else:
-            # loss = v_loss + t_loss
-        loss = v_loss + t_loss
+        # v_loss = criterion(input=visual_logits, target=labels)
+        # t_loss = criterion(input=textual_logits, target=labels)
+        v_loss = self.softceloss(inputs=visual_logits, targets=labels)
+        t_loss = self.softceloss(inputs=textual_logits, targets=labels)
 
+        t_filter_loss = torch.tensor(0.0)
+        distillation_loss = torch.tensor(0.0)
+
+        #* CMKT
+        # student = txt
+        if self.cfg.MODEL.LOSS.LAMBDA2 != 0 or self.cfg.MODEL.LOSS.LAMBDA3 != 0:
+            # feature
+            visual_f = visual_norm.detach()
+            distillation_loss_f = torch.pow(visual_f - textual_norm, 2).sum(dim=1, keepdim=False).mean()
+            # distillation_loss_f = self.KL(textual_norm, visual_norm)
+
+            # probability
+            distillation_loss_p = self.KL(textual_logits, visual_logits)
+            distillation_loss = self.cfg.MODEL.LOSS.LAMBDA2 * distillation_loss_f + self.cfg.MODEL.LOSS.LAMBDA3 * distillation_loss_p
+        #* KR
+        if self.cfg.MODEL.LOSS.LAMBDA4 != 0.0:
+            # textual_logits_filter = self.text_classifier(textual_norm)
+            textual_logits_filter = self.scale * torch.matmul(textual_norm, W_text_norm)
+            # t_filter_loss = self.cfg.MODEL.LOSS.LAMBDA4 * criterion(input=textual_logits_filter, target=labels)
+            t_filter_loss = self.cfg.MODEL.LOSS.LAMBDA4 * self.softceloss(inputs=textual_logits_filter, targets=labels)
+
+        loss = v_loss + t_loss + t_filter_loss + distillation_loss
+
+        if self.cfg.DATASET.NAME == 'Flickr30K':
+            visual_norm = visual_norm.detach()
+            loss_hdr = self.HardDarkRank(textual_norm, visual_norm)
+            # textual_f = textual_norm.detach()
+            # loss_hdr = self.HardDarkRank(visual_norm, textual_f)
+            loss = loss + 0.1 * loss_hdr
+
+        # precision calculate
         visual_pred = torch.argmax(visual_logits, dim=1)
         textual_pred = torch.argmax(textual_logits, dim=1)
-
         visual_precision = torch.mean((visual_pred == labels).float())
         textual_precision = torch.mean((textual_pred == labels).float())
 
-        return loss, visual_precision, textual_precision
+        return loss, distillation_loss, visual_precision, textual_precision
 
     def global_align_loss(self, visual_embed, textual_embed, labels):
         alpha = 0.6
@@ -89,9 +177,10 @@ class LossComputation(nn.Module):
         scale_pos = 10
         scale_neg = 40
 
-        batch_size = visual_embed.size(0)
         visual_norm = F.normalize(visual_embed, p=2, dim=1)
         textual_norm = F.normalize(textual_embed, p=2, dim=1)
+
+        batch_size = visual_embed.size(0)
         similarity = torch.matmul(visual_norm, textual_norm.t())
         mask = labels.expand(batch_size, batch_size).eq(
             labels.expand(batch_size, batch_size).t())
@@ -177,73 +266,48 @@ class LossComputation(nn.Module):
         Max Hinge Loss from 
         Faghri F , Fleet D J , Kiros J R , et al. VSE++: Improving Visual-Semantic Embeddings with Hard Negatives[J]. arXiv, 2017. 
     '''
-    def MH_LOSS(self, 
+    @staticmethod
+    def MH_LOSS(cfg, 
                 visual_embed, textual_embed, 
                 labels, 
                 local_visual_embed=None, local_textual_embed=None, text_length=None):
-        # 没有局部特征，则直接利用全局特征计算相似度
-        if local_visual_embed == None or local_textual_embed == None:
-            visual_norm = F.normalize(visual_embed, p=2, dim=-1)
-            textual_norm = F.normalize(textual_embed, p=2, dim=-1)
+        alpha = 0.2
+        max_violation = True
 
-            scores = visual_norm.mm(textual_norm.t())
-        # 有局部特征，利用局部特征计算相似度
-        else:
+        # feature normalization
+        visual_norm = F.normalize(visual_embed, p=2, dim=-1)
+        textual_norm = F.normalize(textual_embed, p=2, dim=-1)
+        
+        if local_visual_embed != None or local_textual_embed != None:
             local_visual_norm = F.normalize(local_visual_embed, p=2, dim=-1)
             local_textual_norm = F.normalize(local_textual_embed, p=2, dim=-1)
 
-            scores = scores_t2i(local_visual_norm, local_textual_norm, text_length)
-            # local_visual_norm = local_visual_norm.squeeze(1)
-            # local_textual_norm = local_textual_norm.squeeze(1)
 
-            # scores = local_visual_norm.mm(local_textual_norm.t())
+        if cfg.MODEL.GRAN == 'coarse':
+            scores = visual_norm.mm(textual_norm.t())
+        elif cfg.MODEL.GRAN == 'fine':
+            # get scores
+            # [visual, textual]
+            global_scores = visual_norm.mm(textual_norm.t())
 
-            # mask = get_mask(text_length.unsqueeze(1), self.cfg.MODEL.TEXTUAL_MODEL.MAX_LENGTH).unsqueeze(2).expand_as(local_textual_norm_nomask)
-            # # mask = mask.unsqueeze(2)
-            # # mask = mask.expand_as(local_textual_norm)
-            # local_textual_norm = local_textual_norm_nomask * mask
-            
-            # #! ImageRegion-Related-Textual
-            # # [bs, stripes, dim] @ [bs, dim, max_length] => [bs, stripes, max_length]
-            # attn_i2t = local_visual_norm.bmm(local_textual_norm.permute(0,2,1))
-            # attn_i2t_norm = F.softmax(attn_i2t, dim=2)
-            # # [bs, stripes, max_length, 1] * [bs, 1, max_length, dim]
-            # attn_local_textual_norm = attn_i2t_norm.unsqueeze(3) * local_textual_norm.unsqueeze(1)
-            # # [bs, stripes, dim]
-            # IRRelated_textual = torch.sum(attn_local_textual_norm, dim=2)
-            # # [bs, bs, stripes, stripes]
-            # score_i2t = torch.einsum('abc,dec -> adbe', IRRelated_textual, local_visual_norm)
-            # score_i2t_eye = torch.einsum('...ii -> ...i', score_i2t)
-            # score_i2t_mean = torch.mean(score_i2t_eye, dim=2)
-
-            # #! Word-Related-Visual
-            # # [bs, max_length, dim] @ [bs, dim, stripes] => [bs, max_length, stripes]
-            # attn_t2i = local_textual_norm.bmm(local_visual_norm.permute(0,2,1))
-            # attn_t2i_norm = F.softmax(attn_t2i, dim=2)
-            # # [bs, max_length, stripes, 1] * [bs, 1, stripes, dim]
-            # attn_local_visual_norm = attn_t2i_norm.unsqueeze(3) * local_visual_norm.unsqueeze(1)
-            # # [bs, max_length, dim]
-            # WRelated_visual = torch.sum(attn_local_visual_norm, dim=2)
-            # # [bs, bs, max_length, max_length]
-            # score_t2i = torch.einsum('abc,dec -> adbe', WRelated_visual, local_textual_norm)
-            # score_t2i_eye = torch.einsum('...ii -> ...i', score_t2i)
-            # score_t2i_mean = torch.mean(score_t2i_eye, dim=2)
-            
-            # final simialrity scores
-            # scores = (score_i2t_mean + score_t2i_mean) / 2
-            # scores = score_t2i_mean
-
+            # [visual, textual]
+            local_scores_t2i = scores_t2i(local_visual_norm, local_textual_norm, text_length)
+            # [visual, textual]
+            local_scores_i2t = scores_i2t(local_visual_norm, local_textual_norm, text_length)
+            local_scores = (local_scores_t2i + local_scores_i2t) / 2
+            scores = global_scores + local_scores.t()*0.5
         
+        # calculate loss
         diagonal = scores.diag().view(visual_embed.size(0), 1)
         d1 = diagonal.expand_as(scores)
         d2 = diagonal.t().expand_as(scores)
         
         # compare every diagonal score to scores in its column
         # caption retrieval
-        cost_s = (self.margin + scores - d1).clamp(min=0)
+        cost_s = (alpha + scores - d1).clamp(min=0)
         # compare every diagonal score to scores in its row
         # image retrieval
-        cost_im = (self.margin + scores - d2).clamp(min=0)
+        cost_im = (alpha + scores - d2).clamp(min=0)
 
         n = labels.size(0)
         labels_ = labels.expand(n,n)
@@ -255,12 +319,106 @@ class LossComputation(nn.Module):
         cost_s = cost_s.masked_fill_(I, 0)
         cost_im = cost_im.masked_fill_(I, 0)
 
-        # if args.max_violation:
-        if self.max_violation:
+        if max_violation:
             cost_s = cost_s.max(dim=1)[0]
             cost_im = cost_im.max(dim=0)[0]
 
-        return cost_s.sum()+cost_im.sum()
+        # if cfg.MODEL.LOSS.LAMBDA2 == 0.0:
+        #     return cost_s.sum()+cost_im.sum()
+        # else:
+        #     # only image retrieval
+        #     return cost_im.sum()
+
+        return cost_im.sum()
+
+    @staticmethod
+    def ranking_loss(cfg, visual_embed, textual_embed, labels):
+        # max(0, -y(x1-x2) + margin)
+        rank_loss = nn.MarginRankingLoss(margin=0.3)
+        
+        n = visual_embed.size(0)
+        visual_pow = torch.pow(visual_embed, 2).sum(dim=1, keepdim=True).expand(n, n)
+        textual_pow = torch.pow(textual_embed, 2).sum(dim=1, keepdim=True).expand(n, n)
+        dist = visual_pow + textual_pow.t()
+        dist.addmm_(visual_embed, textual_embed.t(), beta=1, alpha=-2)
+        dist = dist.clamp(min=1e-12).sqrt()
+
+        # image2text
+        mask = labels.expand(n,n).eq(labels.expand(n,n).t())
+        dist_ap, dist_an = [], []
+        for i in range(n):
+            dist_ap.append(dist[i][mask[i]].max().unsqueeze(0))
+            dist_an.append(dist[i][mask[i] == 0].min().unsqueeze(0))
+        dist_ap = torch.cat(dist_ap)
+        dist_an = torch.cat(dist_an)
+        # Compute ranking hinge loss
+        y = torch.ones_like(dist_an)
+        rank_loss1 = rank_loss(dist_an, dist_ap, y)
+
+        #text2image
+        dist = dist.t()
+        mask = labels.expand(n,n).eq(labels.expand(n,n).t())
+        dist_ap, dist_an = [], []
+        for i in range(n):
+            dist_ap.append(dist[i][mask[i]].max().unsqueeze(0))
+            dist_an.append(dist[i][mask[i] == 0].min().unsqueeze(0))
+        dist_ap = torch.cat(dist_ap)
+        dist_an = torch.cat(dist_an)
+        y = torch.ones_like(dist_an)
+        rank_loss2 = rank_loss(dist_an, dist_ap, y)
+
+        return rank_loss1 + rank_loss2
+
+    # @staticmethod
+    def aug_loss(self, cfg,
+                visual_embed, txt1_embed, txt2_embed, aug_model, labels):
+        txt1_norm = F.normalize(txt1_embed, p=2, dim=1)
+        txt2_norm = F.normalize(txt2_embed, p=2, dim=1)
+
+        W_text_norm = F.normalize(self.W_text, p=2, dim=0)
+        textual_logits_filter = self.scale * torch.matmul(txt2_norm, W_text_norm)
+        loss = self.softceloss(inputs=textual_logits_filter, targets=labels)
+
+        return loss
+        # return F.pairwise_distance(txt1_norm, txt2_norm, p=2).mean()
+
+        # #* model choice          
+        # if cfg.MODEL.AUG.AUGMODEL == 'VAE':
+        #     g_txt1, mu1, logvar1 = aug_model(txt1_norm)    
+        # elif cfg.MODEL.AUG.AUGMODEL == 'AE':
+        #     encode, g_txt1 = aug_model(txt1_norm)
+        # txt1_vae_norm = F.normalize(g_txt1, p=2, dim=1)
+
+        # #* target
+        # if cfg.MODEL.AUG.TYPE == 'type1':
+        #     target_norm = txt2_norm
+        # # elif cfg.MODEL.AUG.TYPE == 'type2':
+        # #     target_feature = txt1_embed + txt2_embed
+        # #     target_norm = F.normalize(target_feature, p=2, dim=1)
+        # # elif cfg.MODEL.AUG.TYPE == 'type3':
+        # #     target_feature = txt_feature_extractor(model, forward_txt12, forward_txt12_len)
+        # #     target_norm = F.normalize(target_feature, p=2, dim=1)
+        # # elif cfg.MODEL.AUG.TYPE == 'type4':
+        # #     target_feature12 = txt_feature_extractor(model, forward_txt12, forward_txt12_len)
+        # #     target_feature21 = txt_feature_extractor(model, backward_txt21, backward_txt21_len)
+        # #     target_feature = target_feature12 + target_feature21
+        # #     target_norm = F.normalize(target_feature, p=2, dim=1)
+
+        # #*||f1-f2| - |f1-vf1||+|f2-vf1|    
+        # # if cfg.MODEL.AUG.LOSS == 'loss1':
+        # #     # dist11 = torch.pow(txt1_norm - txt1_vae_norm, 2).sum(dim=1, keepdim=False)
+        # #     # dist12 = torch.pow(txt1_norm - txt2_norm, 2).sum(dim=1, keepdim=False)
+        # #     # dist2 = torch.pow(txt1_vae_norm - txt2_norm, 2).sum(dim=1, keepdim=False).mean()
+        # #     dist11 = F.pairwise_distance(txt1_norm, txt1_vae_norm, p=2, keepdim=False)
+        # #     dist12 = F.pairwise_distance(txt1_norm, target_norm, p=2, keepdim=False)
+        # #     dist1 = torch.abs(dist11 - dist12).mean()
+        # #     dist2 = F.pairwise_distance(txt1_vae_norm, target_norm, p=2).mean()
+        # #     aug_loss = dist1 + dist2 
+        # #*|f2-vf1| 
+        # if cfg.MODEL.AUG.LOSS == 'loss2':
+        #     aug_loss = F.pairwise_distance(txt1_vae_norm, target_norm, p=2).mean()
+
+        # return aug_loss
 
     def pcb_loss(self, local_visual_logits_list, labels):
         loss = torch.tensor(0.0).cuda()
@@ -272,18 +430,25 @@ class LossComputation(nn.Module):
     def forward(self, 
                 visual_embed, textual_embed, 
                 labels, 
-                local_visual_embed=None, local_textual_embed=None, text_length=None):
+                local_visual_embed=None, local_textual_embed=None, text_length=None,
+                txt2_embed=None, aug_model=None):
         instance_loss = torch.tensor(0.0)
+        distill_loss = torch.tensor(0.0)
         global_align_loss = torch.tensor(0.0)
         cmpc_loss = torch.tensor(0.0)
         cmpm_loss = torch.tensor(0.0)
         mh_loss = torch.tensor(0.0)
         sum_pcb_loss = torch.tensor(0.0)
+        aug_loss = torch.tensor(0.0)
+        ranking_loss = torch.tensor(0.0)
         visual_precision = torch.tensor(0.0)
         textual_precision = torch.tensor(0.0)
 
+       
+        if self.cfg.MODEL.AUG.LAMBDA5 != 0.0:
+            aug_loss = self.aug_loss(self.cfg, visual_embed, textual_embed, txt2_embed, aug_model, labels=labels)
         if self.cfg.MODEL.LOSS.INSTANCE:
-            instance_loss, visual_precision, textual_precision = self.instance_loss(visual_embed, textual_embed, labels)
+            instance_loss, distill_loss, visual_precision, textual_precision = self.instance_loss(visual_embed, textual_embed, labels, local_visual_embed, local_textual_embed)
         if self.cfg.MODEL.LOSS.GLOBALALIGN:
             global_align_loss = self.global_align_loss(visual_embed, textual_embed, labels)
         if self.cfg.MODEL.LOSS.CMPC:
@@ -291,19 +456,22 @@ class LossComputation(nn.Module):
         if self.cfg.MODEL.LOSS.CMPM:
             cmpm_loss, pos_avg_sim, neg_avg_sim = self.cmpm_loss(visual_embed, textual_embed, labels)
         if self.cfg.MODEL.LOSS.MH:
-            # mh_loss = (self.MH_LOSS(visual_embed, textual_embed, labels, local_visual_embed, local_textual_embed, text_length)\
-            #             +self.MH_LOSS(textual_embed, visual_embed, labels, local_visual_embed, local_textual_embed, text_length)) / 2
-            mh_loss = self.MH_LOSS(visual_embed, textual_embed, labels, local_visual_embed, local_textual_embed, text_length)
+            mh_loss = self.MH_LOSS(self.cfg, visual_embed, textual_embed, labels, local_visual_embed, local_textual_embed, text_length)
         # if self.cfg.MODEL.VISUAL_MODEL.NAME == 'PCB':
         #     sum_pcb_loss = self.pcb_loss(local_visual_logits_list, labels)
+        if self.cfg.MODEL.LOSS.RANKING:
+            ranking_loss = self.ranking_loss(self.cfg, visual_embed, textual_embed, labels)
 
         losses = {
+            "aug_loss": aug_loss,
             "instance_loss": instance_loss * self.cfg.MODEL.LOSS.INSTANCE,
+            "distill_loss": distill_loss,
             "global_align_loss": global_align_loss * self.cfg.MODEL.LOSS.GLOBALALIGN,
             "cmpc_loss": cmpc_loss * self.cfg.MODEL.LOSS.CMPC,
             "cmpm_loss": cmpm_loss * self.cfg.MODEL.LOSS.CMPM,
             "mh_loss": mh_loss * self.cfg.MODEL.LOSS.MH,
             "pcb_loss": sum_pcb_loss,
+            "ranking_loss": ranking_loss,
         }
         precs = {
             "visual_prec": visual_precision,
@@ -313,8 +481,8 @@ class LossComputation(nn.Module):
 
 
 
-def make_loss_evaluator(cfg):
-    num_classes = 11003
+def make_loss_evaluator(cfg, classnum):
+    # num_classes = 11003
     feature_size = 1024
     dropout_prob = 0.0
-    return LossComputation(cfg, num_classes, feature_size, dropout_prob)
+    return LossComputation(cfg, classnum, feature_size, dropout_prob)
